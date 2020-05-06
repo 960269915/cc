@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+</body>
+<script>
+    // 1、===============================================类
+    class Father {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        say() {
+            console.info(this.name + this.age)
+        }
+    }
+    //son的实例调用子类和父类方法，会就近原则
+    //子类需要在自己的constructor里面调用super(),相当于调用父类的构造函数
+    //子类里面可以super.父类方法的形式，调用父类方法
+
+    let that;
+    class Son extends Father {
+        constructor(name, age) { //this指向构造函数的实例
+            super(name, age);//调用父类的构造函数
+            this.name = name;
+            this.age = age;
+            that = this;
+            this.btn = document.querySelector('button');
+            this.btn.onclick = this.sonsay;//函数里面的this。谁调用，this指向谁(在点击事件里面可以使用that指向构造函数的this)
+            // console.info(this)
+            // this.sonsay()  调用自身方法，一定要加this
+        }
+        sonsay() {// this指向构造函数的实例。
+            console.info('son-say' + that.name + that.age)
+        }
+    }
+    let f = new Son('cc', 18);
+    // console.info(that === f) //true,验证this是指向构造函数的实例的
+
+
+
+    // 2、================================================构造函数
+    // 2.1、prototype(原型对象)
+    function Start(name){
+        this.name = name;
+        this.say=function(){
+
+        }
+    }
+    let start1 = new Start('cc');//对象的__proto__指向构造函数的原型对象prototype(并且2个相等)，所以能访问原型上的方法
+    let start2 = new Start('zz');
+    //构造函数的缺点，内存浪费。不同实例的方法指向不同(解决方法是放在构造函数的原型对象上(prototype),原型的作用，就是共享方法)
+    // console.info(start1.say === start2.say); //false
+
+    // 2.2、constructor(指向构造函数)
+    // console.info(start1.__proto__.constructor)
+    // console.info(Start.prototype.constructor)
+    // 需要手动设置constructor的场景
+    Start.prototype = {//此时prototype会被覆盖，丢失constructor,需要手动赋值
+        constructor:Start,
+        eat:function(){},
+        dance:function(){}
+    }
+
+    //2.3、原型链解析
+    //实例start1的__proto__指向的是构造函数Start的prototype，那么prototype作为原型对象，也有自己的__proto__，因为只要是对象
+    //就会有__proto__。那么构造函数的__proto__又指向了Object的prototype。Object的的prototype的__proto__最后指向了null
+
+    // 3、==================================call(改变this指向)
+    function fn(age){
+        console.log(this,age);
+    }
+    let o = {name:'cc'}
+    fn.call(o,'18');//第一个参数为this指向，后面为给函数传递的参数
+    // es5没有extend方法，所有使用的call来继承的父类属性
+    function F(name){this.name = name};
+    F.prototype.eat = function(){};
+    function S(name){
+        F.call(this,name) //此时的this，指向了构造函数S的实例
+    }
+    // 3.1错误的继承方法
+    // S.prototype = F.prototype; 因为原型对象也是对象，对象是引用类型。如果子类在自己身上添加了其他方法，那么父类也会有
+    // 3.2正确的继承方法
+    // 解析 new F()是F的实例对象，那么也有F的所有方法。new也会开辟新的内存空间，为子类prototype上面添加方法，不再影响父类
+    S.prototype = new F(); 
+    S.prototype.constructor = S;//prototype被其他对象覆盖后，记得改回构造函数的指向
+
+</script>
+
+</html>

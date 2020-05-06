@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <u class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </u>
+</body>
+<script>
+    // =============================闭包指有权访问另一个函数内的局部变量的函数
+    // function fn(){
+    //     let num = 1;
+    //     function fnson(){
+    //         console.log(num);
+    //     }
+    //     fnson();
+    // }
+    // fn()
+
+
+
+    function fn() {
+        let num = 1;
+        return function () {
+            num++;
+        }
+    }
+    let f = fn();//fn执行完成以后，num变量没有被释放
+    f();//为什么写f(),而不是fn()()呢，因为写fn()()，会再次执行fn里面的代码，我们想要的只是变量不被销毁
+
+
+    // ==================================立即执行写法  // 立即执行函数，也叫闭包
+    var fn = (function () {
+        let num = 1;
+        return function () {
+            num++;
+            console.log(num);
+        }
+    })()
+    // fn()
+    // fn()
+
+
+    //=================================== 循环取下标问题
+    let lis = document.querySelector('.nav').querySelectorAll('li');
+    for (var i = 0; i < lis.length; i++) {
+        //问题在于当点击事件触发时，循环早已完毕，点击事件和定时器属于异步事件。所以每次只打印最后一个
+        // lis[i].onclick = function(){
+        //     console.log(i);
+        // }
+
+        // 方法1
+        // lis[i].onclick = (function(i){//利用闭包，把i存起来
+        //     return function(){
+        //         console.log(i);
+        //     }
+        // })(i)
+
+        // 方法2
+        (function (i) {
+            lis[i].onclick = function () {
+                console.log(i);
+            }
+        })(i)
+    }
+
+    //================================= 定时器问题
+    for (var i = 0; i < 3; i++) {
+        // setTimeout(function(){ 也是全部打印最后一个
+        //     console.log(i);
+        // },2000)
+
+        // 解决
+        // (function (i) {
+        //     setTimeout(function () {
+        //         console.log(i);
+        //     }, 2000)
+        // })(i)
+
+    }
+
+
+
+    // =============================利用闭包
+    var me = (function () {
+        let innum = 1;
+        let addfn = function () {
+            innum++
+        }
+        let reducefn = function () {
+            innum--
+        }
+        let getnum = function () {
+            return innum
+        }
+
+        return {
+            addfn,
+            reducefn,
+            getnum
+        }
+    })()
+    // 可以任意调用内部方法和变量
+    me.addfn();
+    me.addfn();
+    me.reducefn();
+
+
+// ========================================闭包好处
+// 希望一个变量，一直存在内存中
+// 避免全局变量的污染
+// 内部变量和外部的桥梁，延长了变量的使用范围
+
+
+// ========================思考题
+var name = 'window'
+var obj = {
+    name:'object',
+    getname:function(){
+        return function(){ //此处没有闭包，因为没有访问上级的变量
+            console.log(this.name);
+        }
+    }
+}
+// obj.getname()(); 此时name是什么？
+// 解析 obj.getname()() 执行过程如下
+// let fns = obj.getname();
+// 也等于如下
+// function fns(){
+//     console.log(this.name); //所有此时this,指向window
+// }
+
+
+</script>
+
+</html>

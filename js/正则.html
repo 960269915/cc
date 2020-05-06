@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    var reg = /abc/
+    reg.test('aabcdd'); //返回true，没有边界符的限定的话，只要包含正则里面的值，都返回true
+
+
+    //==============================================边界符 ^ $
+    var reg1 = /^abc/ //^必须以abc开头
+    var reg2 = /abc$/ //$必须以abc结尾
+    // 精准匹配
+    var reg3 = /^abc$/ //必须abc开头，并且abc结束
+    
+
+
+    // ==========================================字符类 [] 是||判断
+    //[a-zA-Z0-9] 字符组合 还可以添加其他的 比如! _ - 等
+    // [^a-z] 此时的^为取反，不能为a-z的字符
+    var reg3 = /[abc]/
+    reg3.test('a');  reg3.test('baby') //都返回true，只要包含[]内的任意字符，都返回true
+    var reg4 = /^[abc]$/  //精准匹配a||b||c单个
+
+
+    // =================================量词符
+    // * 0次或者多次 大于等于0
+    var reg4 = /^a*$/
+    // + 一次或者多次 大于等于1
+    var reg5 = /^a+$/ 
+    // ? 一次或者0次
+    var reg6 = /^a?$/
+    // {3} 重复3次 {3,} 重复大于等于3次 {3,5} 大于等于3次小于等于5次
+    var reg7 = /^a{3}$/
+
+    // ============================()的用法
+    var reg8 = /^abc{3}$/  //这样只会让c重复3次
+    var reg9 = /^(abc){3}$/ //这样是让abc重复3次
+
+
+    // 全国座机号码
+    var rg = /^\d{3,4}-\d{7,8}$/
+
+
+</script>
+</html>

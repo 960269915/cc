@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ==========================================数组的方法
+        let arr  = [1,2,3];
+        // forEach(操作元数据，没有返回)
+        arr.forEach(function(val,index,arr){//每个数组元素、数组索引、数组本身
+            if(val == 2){
+                // return 可以跳过当前循环，无法中断循环
+                return;
+            }
+            // console.info(val)
+        })
+
+        // filter(对元数据进行判断)
+        let new_arr = arr.filter(function(val,index,arr){//返回新数组
+            return val > 1 //返回符合条件的值
+        })
+
+        // map(为原数据进行加工，而不是判断，如果是判断，那么不符合的会返回undefined)
+        let new_arr1 = arr.map(function(val,index,arr){ //map第二个参数为this指向，不传默认为windown
+            return val > this.age //返回比较后的布尔值
+        },{age:1})
+        
+        // some
+        let flag = arr.some(function(val){
+            // every相反，必须全部满足才返回true，否则返回false
+            return val > 5 //返回单个布尔值，查找到一个符合条件就返回true，不在查找。不符合就继续查找。没找到返回false
+            // 相当于return true 就会终止循环，相比foreach，效率更高
+        })
+
+        let obj = {
+            name:'cc',
+            age:18
+        }
+
+        // ==================================对象的方法
+        Object.defineProperty(obj,'hobe',{
+            value:'eat',
+            writable:false, //默认值为false,不允许再去修改
+            enumerable:false,//默认为false，不允许遍历
+            configurable:false//默认false，不允许delete对象属性,并且不能再更改参数{}里面的属性
+        })
+
+        
+        function fn(agr1,agr2){
+            console.info(agr1,agr2)
+        }
+
+        
+        fn.apply(obj,[1,2,3]);
+
+        console.log(Math.max.call(Math,1,2,3));
+                
+       
+        
+                
+
+                
+    </script>
+</body>
+</html>
