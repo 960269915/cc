@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "raw-loader": "^4.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
