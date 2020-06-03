@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var str = 'xx';
 var num = 11;
 // ===============泛型
@@ -14,7 +27,7 @@ var Color;
     Color[Color["black"] = 6] = "black";
 })(Color || (Color = {}));
 var c = Color.black;
-console.log(Color.blue); //0，未声明值，返回下标。如在已声明值的后面，返回已声明值+从声明值开始算的下标，已声明值下标为0
+// console.log(Color.blue); //0，未声明值，返回下标。如在已声明值的后面，返回已声明值+从声明值开始算的下标，已声明值下标为0
 // ============================================函数
 // ===================函数传参
 // 函数传递对象
@@ -43,7 +56,15 @@ function run3(_a) {
 function test(age) {
     return {
         name: 'cc',
-        age: age
+        age: age,
+        info: {
+            address: 'xxx'
+        }
+    };
+}
+// 返回方法
+function returnfn() {
+    return function () {
     };
 }
 function getinfo(agr) {
@@ -54,4 +75,46 @@ function getinfo(agr) {
         return '我的年纪' + agr;
     }
 }
-console.log(getinfo(18));
+//============================ 面向对象
+var Person = /** @class */ (function () {
+    function Person(name) {
+        this.name = name;
+    }
+    Person.prototype.run = function () {
+        return this.name;
+    };
+    Person.sayname = function () {
+        // console.log(this.h);
+        console.log(Person.h);
+    };
+    Person.h = 20;
+    return Person;
+}());
+var Son = /** @class */ (function (_super) {
+    __extends(Son, _super);
+    function Son(name, age) {
+        var _this = _super.call(this, name) || this;
+        _this.age = age;
+        return _this;
+    }
+    return Son;
+}(Person));
+var p = new Son('cc', 18);
+function interfn(info) {
+    console.log(info);
+}
+var fns = function (name, age, info, score) {
+    return name + age + info.address + score;
+};
+console.log(fns('cc', 18, { address: 'chengdu' }, 100));
+var Cat = /** @class */ (function () {
+    function Cat(name) {
+        this.name = name;
+    }
+    Cat.prototype.eat = function () {
+        console.log(this.name + 'eatfood');
+    };
+    return Cat;
+}());
+var cats = new Cat('小华');
+cats.eat();

@@ -12,6 +12,7 @@ const config = {
         main: './src/index.js',//入口文件
         common:'./src/common.js'
     },
+    mode: 'development', // 设置mode
     // devtool: 'inline-source-map',//映射源码，显示具体错误和位置(只用于开发环境)。当多个js打包成一个bundle时，发生错误，只会指向最外层
     devServer: { //开启实时重新加载
         contentBase: './dist',//监听的文件夹
