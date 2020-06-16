@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- https://www.cnblogs.com/suyuanli/p/9655699.html -->
+</body>
+<script>
+    // 发布-订阅模式里面包含了三个模块，发布者，订阅者和处理中心。
+    // 1、处理中心相当于报刊办事大厅，存放杂志，通知订阅了杂志的用户来拿取
+    // 2、发布者相当于一个杂志公司，负责制作杂志
+    // 3、订阅者相当于用户，每当杂志公司发布一个新的杂志，就放在报刊办事大厅。而报刊办事大厅，就通知用户来拿取杂志
+
+
+    // 在实际开发中，经常会遇到某个方法内处理很多的逻辑，最简单的就是直接在方法内直接写。
+    // 这种是高度耦合的面向过程的写法。对于代码维护不友好。而发布-订阅模式就是将两者分离。
+    // 我触发了某个事件（这里我们将触发该方法定义为事件），我只向调度中心通知，我并不知道调度中心内会怎么处理，有多少个人响应。
+    // 我只管通知。而订阅者只管在调度中心订阅，有人调用它才响应。
+
+
+    class Event {
+        constructor() {
+            // 事件容器
+            this.handlers = {}
+        }
+        // 添加事件，事件有名称和事件方法
+        addEvent(type, handlers) {
+            if (!(type in this.handlers)) {
+                this.handlers[type] = []
+            }
+            let index = this.getIndex(type, handlers);
+            if (index > -1) { //如果有就覆盖
+                this.handlers[type][index] = handlers;
+            } else {
+                this.handlers[type].push(handlers)
+            }
+        }
+        getIndex(type, handlers) {
+            return this.handlers[type].findIndex(_handlers => _handlers === handlers);
+        }
+        // 触发的时间和触发时间的参数
+        dispatchEvent(type, handlers, ...params) {
+            if (!(type in this.handlers)) {
+                return new Error('未注册的事件')
+            }
+            if (handlers) { //触发单个事件
+                this.handlers[type].forEach(fn => {
+                    handlers === fn.name && fn(...params)
+                })
+            } else { //触发全部事件
+                this.handlers[type].forEach(fn => {
+                    fn(...params)
+                });
+            }
+        }
+        //要移除的事件名称和方法
+        removeEvent(type, handlers) {
+            if (!handlers) {//删除全部事件
+                if (!(type in this.handlers)) {
+                    return new Error('不能删除未注册的事件')
+                } else {
+                    delete this.handlers[type]
+                }
+            } else { //删除单个事件
+                let index = this.getIndex(type, handlers)
+                if (index > -1) {
+                    this.handlers[type].splice(index, 1)
+                } else {
+                    return new Error('未找到注册的事件')
+                }
+            }
+
+        }
+    }
+    var event = new Event();
+
+    // 相当于a.js里面的方法
+    function load1(params) {
+        console.log('load1' + params);
+    }
+    function load2(params) {
+        console.log('load2' + params);
+    }
+    // 相当于b.js里面的方法
+    function say(params) {
+        console.log('say' + params);
+    }
+    event.addEvent('load1', load1);
+    event.addEvent('load1', load2);
+    // console.log(event);
+    event.dispatchEvent('load1', 'load1', 18);
+    event.removeEvent('load1', load1)
+    event.dispatchEvent('load1', 'load1', 18);
+
+
+    
+
+
+
+
+
+
+</script>
+
+</html>

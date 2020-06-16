@@ -47,6 +47,7 @@
 
 
     // 2、================================================构造函数
+    
     // 2.1、prototype(原型对象)
     function Start(name){
         this.name = name;
@@ -83,13 +84,13 @@
     function F(name){this.name = name};
     F.prototype.eat = function(){};
     function S(name){
-        F.call(this,name) //此时的this，指向了构造函数S的实例
+        F.call(this,name) //此时的this，指向了构造函数S的实例(这个理解为继承属性)
     }
     // 3.1错误的继承方法
     // S.prototype = F.prototype; 因为原型对象也是对象，对象是引用类型。如果子类在自己身上添加了其他方法，那么父类也会有
     // 3.2正确的继承方法
     // 解析 new F()是F的实例对象，那么也有F的所有方法。new也会开辟新的内存空间，为子类prototype上面添加方法，不再影响父类
-    S.prototype = new F(); 
+    S.prototype = new F(); //(这个理解为继承方法)
     S.prototype.constructor = S;//prototype被其他对象覆盖后，记得改回构造函数的指向
 
 </script>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //================================= 单列模式
+    // 单例就是保证一个类只有一个实例，实现方法一般是先判断实例存在与否，如果存在直接返回，如果不存在就创建了再返回，这就确保了一个类只有一个实例对象
+    // 在JavaScript里，单例作为一个命名空间提供者，从全局命名空间里提供一个唯一的访问点来访问该对象。
+
+
+    // 单列模式1，在js中，实现单例最简单的方式就是使用对象字面量（为了尽可能的减少全局变量的污染，在写js的时候可以采用单例模式）
+    let pagejs = { //这样只暴露pagejs对象
+        name: 'cc',
+        common: { //抽离公共的功能
+            setSlide() {
+                console.log('setSlide');
+            }
+        },
+        page1: { //根据页面划分功能
+            _init() {
+                this._setSlide()._otherfn()
+            },
+            _setSlide() {
+                //这里去进行轮播图的相关设置
+                pagejs.common.setSlide()//这里调用公共的方法
+                // 返回this,那么就能实现链式调用了
+                return this;
+            },
+            _otherfn: function () {
+                console.log('_otherfn');
+            }
+        },
+        page2: {
+            _setSlide: function () {
+                pagejs.common.setSlide();
+                //这里去进行轮播图的相关设置
+            }
+        }
+    }
+
+    // let pagejs1 = pagejs;
+    // let pagejs2 = pagejs;
+    // console.log(pagejs1 === pagejs2); // true
+
+    // 单列模式2（添加自己私有的属性和方法，暴露公共的属性和方法，使用闭包封装）
+    var Single = function () {
+        let instance = null;// 缓存单例的变量
+        // 构造器函数
+        function SingleConstructor(options) {
+            this.name = options.name;
+        }
+        SingleConstructor.prototype.say = function () {
+            console.log(this.name);
+        }
+        return {
+            getInstance(options) {
+                if (!instance) {
+                    instance = new SingleConstructor(options)
+                }
+                return instance;
+            }
+        }
+    }()
+
+    // var s1 = Single.getInstance({name:'cc'});
+    // s1.say();
+
+
+    // 单列模式2形式重写单列模式1
+    let Single1 = function () {
+        let instance = null;
+        let that;
+        function Pagejs(name) {
+            this.name = name;
+            that = this;
+        };
+        Pagejs.prototype = {
+            constructor: Pagejs,
+            common: { //公共的
+                setSlide() {
+                    console.log('_____setSlide');
+                }
+            },
+            page1: { //根据页面划分功能
+                _init() {
+                    this._setSlide()._otherfn();
+                },
+                _setSlide() {
+                    Pagejs.prototype.common.setSlide();
+                    return this;
+                },
+                _otherfn: function () {
+                    console.log(that.name);
+                }
+            },
+            page2: {
+                _setSlide: function () {
+                    Pagejs.prototype.common.setSlide();
+                }
+            }
+
+        }
+        return {
+            getInstancef: function (name) {
+                if (instance === null) {
+                    instance = new Pagejs(name);
+                }
+                return instance;
+            }
+        }
+    }()
+
+    var s1 = Single1.getInstancef('cc');
+    // console.log(s1.constructor);
+    // s1.page1._init();
+
+
+    // 找数组不同
+    // let arr1 = [1, 2, 3]
+    // let arr2 = [1,'f',2, 3]
+    // function diff(arr1, arr2) {
+    //     let diffVal = '';
+    //     let arr3 = arr1.concat(arr2);
+    //     console.log(arr3);
+    //     arr = arr3.filter((item,index)=>{
+    //         return arr1.indexOf(item) ===-1 || arr2.indexOf(item) === -1;
+    //     })
+    //     diffVal = arr[0];
+    //     let index = arr2.indexOf(diffVal)
+    //     return index;
+    // }
+    // console.log(diff(arr1,arr2));
+
+
+    // ======== arguments
+    function test(a) {
+        console.log(arguments);
+        console.log(typeof arguments);
+        console.log(arguments instanceof Array); //false,属于类数组
+        console.log(arguments instanceof Object); //true
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

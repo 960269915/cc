@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- https://www.jianshu.com/p/0d807e4752a0   vue双向绑定-->
+</body>
+<script>
+    // 观察者模式指的是一个对象（Subject）维持一系列依赖于它的对象（Observer）
+    // 当有关状态发生变更时 Subject 对象则通知一系列 Observer 对象进行更新。
+    // 在观察者模式中，Subject 对象拥有添加、删除和通知一系列 Observer 的方法等等，而 Observer 对象拥有更新方法等等。
+
+    // 观察者模式和发布订阅者模式区别
+    // 在观察者模式中，观察者是知道Subject的，Subject一直保持对观察者进行记录。然而，在发布订阅模式中，发布者和订阅者不知道对方的存在。它们只有通过消息代理进行通信。
+
+    // 定义一个主体对象，主体对象拥有增加，删除和通知Observer等方法
+
+    // 这种模式在平常日用中很常见，比如我们监听 div 的 click 事件，其本质就是观察者模式。 
+    // div.addEventListener('click', function(e) {...}) 
+    // 用文字描述：观察 div 对象，当它被点击了(发生变化)，执行匿名函数(接受通知，然后做出相应行为)。
+    class Subject {
+        constructor() {
+            this.Observers = []
+        }
+        add(observer) {
+            this.Observers.push(observer);
+        }
+        remove(observer) {
+            this.Observers = this.Observers.filter(_ob => _ob != observer)
+        }
+        notify() { //notify通知   通知观察者更新
+            this.Observers.filter((_ob => {
+                _ob.update()
+            }))
+        }
+    }
+    //定义观察者对象 观察者对象拥有更新方法
+    class Observer {
+        constructor(name) {
+            this.name = name;
+        }
+        update() {
+            console.log('更新了，通知我的是' + this.name);
+        }
+    }
+    let sub = new Subject();  //理解为创造一个dom元素
+    let ob1 = new Observer('cc');//创造一个ob1方法
+    let ob2 = new Observer('zz');//创造一个ob2方法
+
+    sub.add(ob1);//往dom元素上添加了ob1方法
+    sub.add(ob2);//往dom元素上添加了ob2方法
+
+    // sub.remove(ob2)//从dom元素上删除了ob2方法
+
+    sub.notify();//执行dom元素上的所有方法
+
+
+
+
+
+
+
+
+
+
+
+
+    // ===============================vue 原理伪代码
+
+    // ************************************第一，劫持所有data里面的数据
+    function vueObserver(value, cb) {
+        Object.keys(value).forEach((key, index) => {
+            defineReactive(value, key, value[key], cb);
+        })
+    }
+
+    function defineReactive(obj, key, val, cb) {
+        let dep = new Dep();
+        Object.defineProperty(obj, key, {
+            get() {
+                //****************** get的时候，进行收集依赖，第一次触发get是在页面{{}} 或者v-model的时候
+                if (Dep.target) {
+                    // ****************当在页面上{{}} 或者v-model的时候，就会添加个标记target，避免处理data里面没有使用的数据
+                    //Dep.target 指向Watch
+                    /*Watcher对象存在全局的Dep.target中*/
+                    dep.addSub(Dep.target);
+                }
+                return val;
+            },
+            // *****************set的时候，触发所有收集的依赖
+            set(newVal) {
+                val = newVal;
+                dep.notify();
+            }
+        })
+    }
+
+
+
+    class Dep { //发布者
+        constructor() {
+            this.subs = [];
+        }
+        addSub(observer) {
+            this.subs.push(observer)
+        }
+        notify() {
+            this.subs.forEach((_sb) => {
+                _sb.update();
+            })
+        }
+    }
+
+    class Watch { //观察者
+        // vm即是vue实例,实例化的时候传入vue的this  cb就是回调函数 options为配置项
+        constructor(vm, cb, options) {
+            this.cb = cb;
+            this.vm = vm;
+            /**********************在这里将观察者本身赋值给全局的target，只有被target标记过的才会进行依赖收集*/
+            Dep.target = this;
+            /*触发渲染操作进行依赖收集*/
+            this.cb.call(this.vm);
+        }
+        update() {
+            // ********************这里面是编译器代码，所以watch的意义是链接编译器和数据的桥梁
+            this.cb.call(this.vm);
+        }
+    }
+
+    class Vue {
+        constructor(options) {
+            this.data = options.data;
+            vueObserver(this.data, options.render);
+        }
+    }
+
+
+    let app = new Vue({
+        data: {
+            name: 'cc'
+        },
+        render() {
+            console.log('vue_render');
+        }
+    })
+
+
+
+
+
+</script>
+
+</html>

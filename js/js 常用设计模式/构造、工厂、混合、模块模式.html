@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // ====================构造函数模式
+    function Person(name) {
+        this.name = name;
+        this.say = () => {
+            console.log(this.name);
+        }
+    }
+    let p1 = new Person('cc');
+    let p2 = new Person('zz');
+    // 优点：解决了创建多个相似对象的问题
+    // 缺点 每次新建实例，每个方法都会被从新创造一遍
+    // console.log(p1.say === p2.say); //false
+
+
+    // =====================工厂模式
+    function Car(color) {
+        let carInfo = {};
+        carInfo.color = color;
+        carInfo.run = () => {
+            console.log('i can run' + carInfo.color);
+        }
+        return carInfo;
+    }
+
+    let car1 = Car('red');
+    // 缺点 不能确定对象的类型（即无法用 instanceof 去判断）
+    // console.log(car1 instanceof Car); //false
+
+
+    // ========================原型模式
+
+    function Man() { }
+    Man.prototype.age = 18;
+    Man.prototype.hobe = ['1', '2'];
+    Man.prototype.say = function () {
+        console.log(this.age);
+    }
+    let m1 = new Man();
+    let m2 = new Man();
+    m1.age = 20; //原型上的color不会被修改
+    // m1.say() //来自实例
+    // m2.say()//来自原型
+
+    // console.log(Man.prototype); //构造函数的prototype对象包含constructor对象，指向构造函数
+    // console.log(m1.__proto__); // __proto__ 指向原型对象
+    // console.log(Man.prototype === m1.__proto__); //true
+
+    // 优点：属性和方法可以共享，可以在实例上重写属性和方法，并且不会改变原型对象
+    // 缺点：由于共享原型，对于引用类型的值，实例修改了，会影响原型上的的值
+    m1.hobe.push('3');
+    // console.log(m2.hobe); // 这里影响了原型的值
+
+
+
+    // ===============================构造函数+原型模式
+
+    function Animal(name, color) {
+        this.name = name;
+        this.color = color;
+    }
+    Animal.prototype.getInfo = function () {
+        console.log('名称：' + this.name);
+    }
+
+    function LargeCat(name, color, age) {
+        Animal.call(this, name, color);
+        this.age = age;
+    }
+    LargeCat.prototype = new Animal();
+    LargeCat.prototype.constructor = LargeCat;
+
+    let l = new LargeCat('cc', 'red', 18);
+    // l.getInfo();
+    // console.log(l.__proto__.constructor);
+
+
+    // =============================模块模式
+
+    let Block = function () {
+        let name = 'cc';
+        function say() {
+            console.log('say');
+        }
+        function run() {
+            console.log('run');
+        }
+        return {
+            say,
+            run,
+            name
+        }
+    }()
+    // console.log(Block.name);
+
+
+
+
+
+    // 面向对象题目
+    // 打车
+
+    class MyCar {
+        constructor(name, num) {
+            this.name = name;
+            this.num = num
+        }
+    }
+
+    class Run {
+        constructor(car) {
+            this.car = car
+        }
+        CarStart() {
+            console.log(this.car.name + '---车牌号' + this.car.num);
+        }
+        CarEnd(runNum) {
+            console.log(this.car.price * runNum + '---车费');
+        }
+    }
+
+    class MyCar1 extends MyCar {
+        constructor(name, num) {
+            super(name, num);
+            this.price = 1;
+        }
+    }
+
+    class MyCar2 extends MyCar {
+        constructor(name, num) {
+            super(name, num);
+            this.price = 2;
+        }
+    }
+
+    let kuaiche = new MyCar1('快车', 'a888');
+    let run1 = new Run(kuaiche);
+    // run1.CarStart();
+    // run1.CarEnd(3);
+
+
+    // 停车场
+
+    class park {
+        constructor(floor) {
+            this.carList = {}
+            this.floor = floor;
+            this.camera = new camera();
+            this.screen = new screen();
+            this.index = 0;
+            this.num = 0;
+        }
+        in(car) {
+            if(this.num * this.index >=300){
+                console.log('park full');
+                return;
+            }
+            let info = this.camera.saveInfo(car);
+            let place = this.floor[this.index].places[this.num]
+            place.in();
+            info.place = place;
+            this.carList[car.num] = info;
+            this.num++;
+            if (this.num >= 100) {
+                this.index++;
+                this.num = 0;
+            }
+        }
+        out(car) {
+            let info = this.carList[car.num];
+            let place = info.place;
+            place.out();
+            this.screen.show(car, info.intime);
+            delete this.carList[car.num]
+        }
+        AllEmptyNum() { //所有空车位
+            return this.floor.map(floor => {
+                return `${floor.index} 层还有 ${floor.EmptyNum()} 个车位`
+                // 返回的是数组，所以通过join变成字符串
+            }).join('\n')
+        }
+    }
+    class floor {
+        constructor(index, places) {
+            this.index = index; //楼层
+            this.places = places; //所有车位
+        }
+        EmptyNum() { //每层空车位
+            let emptyNum = 100; //所有剩余车位
+            this.places.forEach((item) => {
+                if (!item.isempty) {
+                    emptyNum--;
+                }
+            })
+            return emptyNum;
+        }
+    }
+
+    class place {
+        constructor() {
+            this.isempty = true;
+        }
+        in() {
+            this.isempty = false;
+        }
+        out() {
+            this.isempty = true;
+        }
+        check() {
+            return this.isempty;
+        }
+    }
+
+    class camera {
+        saveInfo(car) {
+            return {
+                num: car.num,
+                intime: Date.now()
+            }
+        }
+    }
+
+    class screen {
+        show(car, intime) {
+            console.log((Date.now() - intime) + '--车牌' + car.num);
+        }
+    }
+
+    class car {
+        constructor(num) {
+            this.num = num;
+        }
+    }
+
+
+    // 创建楼层车位
+    let floors = [];
+    for (let i = 0; i < 3; i++) {
+        let places = [];
+        for (let j = 0; j < 100; j++) {
+            places[j] = new place();
+        }
+        floors[i] = new floor(i + 1, places)
+    }
+    let p = new park(floors);
+
+    for (let i = 0; i < 290; i++) {
+        let c1 = new car('川a' + i);
+        p.in(c1);
+    }
+
+
+    console.log(p.AllEmptyNum());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
