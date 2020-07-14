@@ -14,11 +14,61 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var str = 'xx';
 var num = 11;
-// ===============泛型
+// =========================================================泛型
 var arr = ['cc', 'name'];
-// ================联合类型
+// 函数泛型
+function getdata(val) {
+    return val;
+}
+// 不用再函数声明时定义类型，可以在函数使用时传入类型 <number> 对应<T> 增加了函数的复用性 也可以理解把约束交给了调用者
+getdata(1223);
+function info(info) {
+    console.log(info);
+}
+// info<infoface>({
+//     name:'cc',
+//     age:18
+// })
+// 类泛型
+var MinNum = /** @class */ (function () {
+    function MinNum() {
+        this.list = [];
+    }
+    MinNum.prototype.add = function (val) {
+        this.list.push(val);
+    };
+    MinNum.prototype.getOne = function () {
+        var val = this.list[0];
+        return val;
+    };
+    return MinNum;
+}());
+var m = new MinNum();
+m.add(10);
+m.add(2);
+var m2 = new MinNum();
+m2.add('a');
+m2.add('b');
+var fncc = function (name) {
+    return name;
+};
+var Db = /** @class */ (function () {
+    function Db() {
+    }
+    Db.prototype.add = function (info) {
+        // console.log(info);
+        return true;
+    };
+    return Db;
+}());
+var d = new Db();
+d.add({
+    name: 'cc',
+    age: 18
+});
+// ===========================================================================联合类型
 var testval = 1;
-// ===============枚举
+// ===================枚举
 var Color;
 (function (Color) {
     Color[Color["blue"] = 0] = "blue";
@@ -28,7 +78,7 @@ var Color;
 })(Color || (Color = {}));
 var c = Color.black;
 // console.log(Color.blue); //0，未声明值，返回下标。如在已声明值的后面，返回已声明值+从声明值开始算的下标，已声明值下标为0
-// ============================================函数
+// ============================================================函数
 // ===================函数传参
 // 函数传递对象
 function run(_a) {
@@ -75,7 +125,7 @@ function getinfo(agr) {
         return '我的年纪' + agr;
     }
 }
-//============================ 面向对象
+//========================================================== 面向对象
 var Person = /** @class */ (function () {
     function Person(name) {
         this.name = name;
@@ -106,7 +156,6 @@ function interfn(info) {
 var fns = function (name, age, info, score) {
     return name + age + info.address + score;
 };
-console.log(fns('cc', 18, { address: 'chengdu' }, 100));
 var Cat = /** @class */ (function () {
     function Cat(name) {
         this.name = name;
@@ -117,4 +166,4 @@ var Cat = /** @class */ (function () {
     return Cat;
 }());
 var cats = new Cat('小华');
-cats.eat();
+// cats.eat();

@@ -2,13 +2,93 @@ let str: string = 'xx';
 
 let num: number = 11;
 
-// ===============泛型
+// =========================================================泛型
 let arr: Array<string> = ['cc', 'name']
 
-// ================联合类型
+
+// 函数泛型
+function getdata<T>(val: T): T {
+    return val
+}
+// 不用再函数声明时定义类型，可以在函数使用时传入类型 <number> 对应<T> 增加了函数的复用性 也可以理解把约束交给了调用者
+getdata<number>(1223)
+
+
+interface infoface {
+    name: string,
+    age: number
+}
+
+function info<T>(info: T) {
+    console.log(info);
+}
+
+// info<infoface>({
+//     name:'cc',
+//     age:18
+// })
+
+
+
+
+
+
+
+// 类泛型
+class MinNum<T>{
+    public list: Array<T> = [];
+    add(val: T): void {
+        this.list.push(val);
+    }
+    getOne(): T {
+        let val = this.list[0];
+        return val;
+    }
+}
+let m: MinNum<number> = new MinNum();
+m.add(10)
+m.add(2)
+
+let m2: MinNum<string> = new MinNum();
+m2.add('a')
+m2.add('b')
+
+// 接口泛型
+interface fnaa<T> {
+    (name: T): T
+}
+
+let fncc: fnaa<string> = function <T>(name: T): T {
+    return name;
+}
+// console.log(fncc('cc'));
+
+
+interface obj {
+    name: string,
+    age: number
+}
+
+class Db<T>{
+    add(info: T): boolean {
+        // console.log(info);
+        return true;
+    }
+}
+
+var d: Db<obj> = new Db();
+d.add({
+    name: 'cc',
+    age: 18
+})
+
+
+
+
+// ===========================================================================联合类型
 let testval: string | number = 1;
 
-// ===============枚举
+// ===================枚举
 enum Color { blue, red = 4, orange, black }
 
 let c: Color = Color.black
@@ -16,7 +96,7 @@ let c: Color = Color.black
 // console.log(Color.blue); //0，未声明值，返回下标。如在已声明值的后面，返回已声明值+从声明值开始算的下标，已声明值下标为0
 
 
-// ============================================函数
+// ============================================================函数
 // ===================函数传参
 // 函数传递对象
 function run({ name, age }: { name: string, age: number }): string {
@@ -64,7 +144,7 @@ function getinfo(agr: number | string): any {
 }
 
 
-//============================ 面向对象
+//========================================================== 面向对象
 class Person {
     name: string
     static h: number = 20
@@ -90,7 +170,7 @@ class Son extends Person {
 
 var p: Son = new Son('cc', 18);
 
-// ===================接口 对属性、方法、对象进行规范
+// ====================================================================接口 对属性、方法、对象进行规范
 // 对象接口
 interface obj {
     name: string;
@@ -110,9 +190,9 @@ interface fn {
 let fns: fn = (name, age, info, score): string => {
     return name + age + info.address + score
 }
-console.log(
-    fns('cc', 18, { address: 'chengdu' }, 100)
-);
+// console.log(
+//     fns('cc', 18, { address: 'chengdu' }, 100)
+// );
 
 // 类接口
 interface Dog {
@@ -131,4 +211,5 @@ class Cat implements Dog {//Cat必须要有Dog接口的所有属性和方法
 }
 let cats = new Cat('小华')
 
-cats.eat();
+// cats.eat();
+

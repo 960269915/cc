@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15360922",
+      "name": "avatar09",
+      "font_class": "avatar09",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "15376083",
+      "name": "avatar10",
+      "font_class": "10",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "15398721",
+      "name": "avatar19",
+      "font_class": "19",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    }
+  ]
+}

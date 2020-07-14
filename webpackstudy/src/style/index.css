@@ -1,0 +1,7 @@
+body{
+    height: 100%;
+    font-size: 100px;
+    display: flex;
+    /* 具有兼容性的css样式 */
+    backface-visibility: hidden; 
+}
