@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config build/webpack.base.config.js --mode production  --progress --color",
+    "build": "webpack --config  build/webpack.base.config.js --mode production  --progress --color",
     "dev": "webpack --mode development",
-    "start": "webpack-dev-server --open --config build/webpack.dev.config.js"
+    "start": "webpack-dev-server  --open --config build/webpack.dev.config.js"
   },
   "keywords": [],
   "author": "",
