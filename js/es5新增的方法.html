@@ -37,12 +37,26 @@
             // 相当于return true 就会终止循环，相比foreach，效率更高
         })
 
+        // reduce
+        // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+        // total 必须，初始值或者计算结束后的返回值。
+        // currentValue 必须，当前元素
+        // currentIndex 可选，当前元素的索引
+        // arr 可选，当前数组
+        // initialValue 可选，初始化的值
+        arr.reduce((item1,item2,currentIndex, arr)=>{
+            console.log(item1,item2,currentIndex, arr);
+            return item1 + item2
+        })
+
+
+
+        // ==================================对象的方法
         let obj = {
             name: 'cc',
             age: 18
         }
 
-        // ==================================对象的方法
         Object.defineProperty(obj, 'hobe', {
             value: 'eat',
             writable: false, //默认值为false,不允许再去修改
@@ -51,32 +65,11 @@
         })
 
 
-        function fn(agr1, agr2) {
-            console.info(agr1, agr2)
-        }
-
-
-        fn.apply(obj, [1, 2, 3]);
-
-        console.log(Math.max.call(Math, 1, 2, 3));
+    
 
 
 
-        var testarr = [1, 2, 3]
-        var newarr = [];
-        let str = '';
-        for (let i = 0; i < testarr.length; i++) {
-            for (let j = 0; j < testarr.length; j++) {
-                for (let k = 0; k < testarr.length; k++) {
-                    if (testarr[i] != testarr[j] && testarr[i] != testarr[k] && testarr[j] != testarr[k]) {
-                        str = testarr[i] + '' + testarr[j] + testarr[k]
-                        newarr.push(str);
-                    }
-                }
-            }
-        }
-
-        console.log(newarr);
+   
 
 
 
