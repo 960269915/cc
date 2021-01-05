@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body></body>
+<script>
+    // ============================================
+    // 扁平化数组
+    let arr = [[1, 2], 1];
+
+    function splitArr(arr) {
+        let arrs = [];
+        arr.forEach((item) => {
+            if (Array.isArray(item)) {
+                //先判断，再push
+                arrs = arrs.concat(splitArr(item)); // 如果不使用concat,需传递个数组的引用下去
+            } else {
+                arrs.push(item);
+            }
+        });
+        // 当[1,2]进入递归，循环完成以后，就会退出递归返回递归的结果（也相当于递归的退出条件）
+        return arrs;
+    }
+    // console.log(splitArr(arr));
+
+    // ================================================
+    function test(n) {
+        // 总是要有退出条件
+        if (n == 1) {
+            return 1;
+        }
+        return n + test(n - 1);
+    }
+    // console.log(test(3));
+
+    // =================================
+    // 1,1,2,3,5,8,13,21,34 斐波那契
+    function feibo(n, tag) {
+        if (n <= 2) {
+            return 1;
+        }
+        return feibo(n - 1, "fn1") + feibo(n - 2, "fn2");
+    }
+
+    //~~~~~~~~~~~ 此处出口为 n<=2 所以只要推算出来的n在这个范围内，当前递归的函数，就已经有结果了比如 feibo(2)
+    // 比如 n = 4
+    // feibo(4-1,'fn1') + feibo(4-2,'fn2')
+    // feibo(3-1,'fn1') + feibo(3-2,'fn2')
+    // console.log(feibo(4));
+
+    let nodeList = [
+        {
+            id: "1-1",
+            children: [{ id: "1-2-1",pid:'1-1' }, { id: "1-2-2",pid:'1-1' }],
+        },
+        { id: "2-1" },
+        {
+            id: "3-1",
+            children: [{ id: "3-2-1", pid:'3-1',children: [{ id: "3-3-1",pid:'3-2-1' }] }],
+        },
+    ];
+
+    // ===========================================获取所有的id
+    function getid(arr, arrs = []) {
+        // arrs 此处数组是传递的引用
+        arr.forEach((item) => {
+            arrs.push({
+                //先push，再判断
+                id: item.id,
+            });
+            if (Array.isArray(item.children)) {
+                getid(item.children, arrs);
+            }
+        });
+        return arrs;
+    }
+    // console.log(getid(nodeList));
+
+    // 把所有children 拿出来装入一个新数组
+    function getChildrenAll() {
+        for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].newArr = [];
+            if (nodeList[i].children) {
+                function test(arr,arrs=[]){
+                    arr.forEach((item)=>{
+                        arrs.push({
+                            id:item.id
+                        })
+                        if(Array.isArray(item.children)){
+                            test(item.children,arrs)
+                        }
+                    })                    
+                    return arrs
+                }
+                nodeList[i].newArr = test(nodeList[i].children)
+            }
+        }
+    }
+    // getChildrenAll()
+    // console.log((nodeList));
+
+    // 已知id = {"3-3-1"} 的数据  获取当前数据链
+   function familyTree(arr1, id) {
+    //    debugger
+      var temp = []
+      var forFn = function (arr, id) {
+        for (var i = 0; i < arr.length; i++) {
+          var item = arr[i]
+          if (item.id === id) { //找到后负责向上递归
+            temp.push(item)
+            forFn(arr1, item.pid)
+            break;
+          } else {
+            if (item.children) { //负责向下递归
+              forFn(item.children, id)
+            }
+          }
+        }
+      }
+      forFn(arr1, id)
+      return temp
+    }
+
+
+    console.log(familyTree(nodeList,'1-2-1'));
+
+
+
+
+
+    
+</script>
+
+</html>
