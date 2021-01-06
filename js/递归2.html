@@ -126,21 +126,36 @@
       return temp
     }
 
-
     // console.log(familyTree(nodeList,'1-2-1'));
 
 
-    function test(arr,arrs){
-        arr.forEach((item)=>{
-           arrs.push(item.id);
-           if(item.children){
-               test(item.children,arrs)
-           }
+    
+
+    var a=[1,[4]]
+
+    var j=[];
+
+    function copyarr(arrs){
+        // debugger
+        let arr = []
+        arrs.forEach((item,index)=>{
+            if(Array.isArray(item)){
+                arr[index] = copyarr(item)
+            }else{
+                arr[index] = item;
+            }
         })
-        return arrs
+        return arr
     }
 
-    console.info(test(nodeList,[]))
+
+    console.log( copyarr(a))
+
+
+
+    
+   
+
 
 
 
