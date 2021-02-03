@@ -24,7 +24,6 @@ export default {
     // 声明单值 页面访问直接写名称
     let name = ref("name");
 
-
     // 拿取页面dom divele需要和页面dom的ref名称一样，并且需要return。divele.value 才是真实dom
     let divele = ref(null);
 
@@ -36,10 +35,18 @@ export default {
       divele.value.innerText = `${new_val} + ${old_val}`;
     });
 
+    // 监听对象，默认就是深度监听
+    // watch(obj,()=>{})
+
+    // 监听对象属性
+    // watch(() => state.count, (oldVlaue, newValue) => {
+    //   console.log(oldVlaue, newValue, '改变')
+    // })
+
     // 生命周期（写在return之前）
     onMounted(() => {
       setTimeout(() => {
-        name.value = 'name--cc';
+        name.value = "name--cc";
         console.log("我被挂载了");
       }, 1000);
     });
@@ -55,6 +62,7 @@ export default {
 
 // 提取num相关逻辑，方便复用
 function numfn() {
+  // reactive 把值设置为响应式
   const data = reactive({
     num: 1,
     // 计算属性

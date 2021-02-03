@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- update 代替 input 事件 -->
     <div @click="$emit('update:num', num + 1)">{{ num }} 传递的value</div>
   </div>
 </template>
@@ -45,6 +46,4 @@ export default {
 // };
 </script>
 
-<style>
-</style>
-
+<style></style>

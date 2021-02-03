@@ -84,7 +84,7 @@ export default {
     // watchEffect会在初始化的时候执行一次，类似computed
     // computed的值没有被使用，是不会触发回调的 watchEffect是在setup的时候就会初始化
     const stop = watchEffect(() => {
-      console.log(state.todos);
+      // console.log(state.todos);
     });
     // 停止监听
     // stop()
@@ -105,5 +105,4 @@ export default {
 };
 </script>
 
-<style  scoped>
-</style>
+<style scoped></style>
