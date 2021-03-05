@@ -1,0 +1,19 @@
+pub_key： pub_3e2a6723918cf08da95fb5051533f9bd
+sub_key： sub_64e816e612f61f67cb25467043520eb8
+
+
+
+
+https://lanhuapp.com/url/NFmWo-wmj30  szwangtuo@sina.com  Wtkj778899
+
+
+
+
+
+
+
+ if (audio.paused) { //判断当前的状态是否为暂停，若是则点击播放，否则暂停
+         audio.play();
+     }else{
+                 audio.pause();
+     }
