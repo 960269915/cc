@@ -32,31 +32,43 @@
         <div id="content1" class="content-box">
           <div id="mask-box">
             <div id="mask-wrap">
-              <!-- <p class="mask-item">握手弹幕哈哈哈哈</p> -->
             </div>
           </div>
           <div id="mask-switch">
             <img src="./img/open.png" alt="">
           </div>
 
-          <div id="msg-box-wrap"></div>
-
-          <!-- <div id="msg-box">
-            <img class="user-photo" src="" alt="">
-            <div class="msg-wrap">
-              <p class="user-name">sss</p>
-              <p class="msg-text">ccccc</p>
-              <img class="msg-img" src="" alt="">
-              <div class="audio-box">
-                ·|·|·|·
-                <audio class="audio" src="http://read.szwangtuo.com:8080/mp3/05-1.mp3" controls="controls"></audio>
+          <div id="msg-box-wrap">
+            <!-- <div class="remove-tag">
+              删除
+            </div> -->
+            <div id="msg-box" data-id="1" class="msg-box ">
+              <img class="user-photo fr" src="./img/photo.png" alt="">
+              <div class="msg-wrap fl right ">
+                <p class="user-name tr">cc 
+                 <span class="admin-tip">管理员</span>
+                 03/05 21:49:21</p>
+                <p class="msg-text user-color">1管理员管理员管理员管理员1</p>
               </div>
             </div>
-          </div> -->
+          </div>
+
 
 
         </div>
-        <div id="content2" class="content-box"></div>
+        <div id="content2" class="content-box">
+
+          <div id="msg-box" data-id="1" class="msg-box ">
+            <img class="user-photo fr" src="./img/photo.png" alt="">
+            <div class="msg-wrap fl right ">
+              <p class="user-name tr">cc 
+               <span class="admin-tip">管理员</span>
+               03/05 21:49:21</p>
+              <p class="msg-text user-color">哈哈</p></p>
+            </div>
+          </div>
+
+        </div>
         <div id="content3" class="content-box">
           <div id="pay-wrap">
             <p class="pay-title">教堂奉献箱</p>
@@ -108,7 +120,6 @@
       </div>
 
       <div id="yyshow">
-        <!-- <img style="margin:0 0.1rem;" src="./img/yuyin.png" alt=""> -->
         <div class="cancel1">正在说话,松开发送...</div>
         <div class="cancel">保持长按,拖到此处取消</div>
       </div>
@@ -116,6 +127,12 @@
     <div id="img-show">
       <img id="show-img-item" src="" alt="">
     </div>
+     <!-- add -->
+    <div class="watch-wrap">
+      在线观看人数<span id="watch-user">0</span>人
+    </div>
+
+
     <script type="text/javascript" src="https://cdn.aodianyun.com/dms/rop_client.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
     <script src="./output/rem.js"></script>
@@ -124,10 +141,8 @@
     <script src="./js/chat.js"></script>
     <script src="./output/sdk.js"></script>
     <script src="./js/index.js"></script>
-
-    <script>
-      // window.location="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd41bd5599871a34d&redirect_uri=http://webcc.free.idcfengye.com&response_type=code&scope=snsapi_userinfo"
-    </script>
+    <!-- add -->
+    <script src="./js/msg.js"></script>
   </body>
 
 </html>
