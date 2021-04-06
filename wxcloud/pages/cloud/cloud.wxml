@@ -1,0 +1,3 @@
+<view>
+  <text bindtap="update">云函数更新</text>
+</view>

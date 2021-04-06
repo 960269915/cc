@@ -1,0 +1,9 @@
+<view>
+  <text bindtap="chooseImg">上传图片</text>
+  <view>
+    <!-- <image src="cloud://caiyuntao-32d704.6361-caiyuntao-32d704-1257901087/上传图片.png"/> -->
+  </view>
+  <view>
+    <text bindtap="chooseVideo">上传视频</text>
+    </view>
+</view>

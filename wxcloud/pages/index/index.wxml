@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <text bindtap="update">修改数据</text>
+  <text bindtap="add">新增数据</text>
+  <text bindtap="sort">排序</text>
+  <text bindtap="limit">返回3条</text>
+  <text bindtap="skip">跳过1条</text>
+
+
+
+
+  <view wx:for="{{list}}" wx:key="id">
+    单价 :{{item.price}}  名称:{{item.name}} {{item._id}}   <text bindtap="remove" data-id="{{item._id}}">删除</text>
+ 
+
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<view>
+  <text bindtap="cmd1">gt大于50</text>
+  <view>
+    <text bindtap="cmd2">大于0小于100</text>
+  </view>
+
+  <view wx:for="{{list}}" wx:key="id" style="margin-top:30px">
+    单价 :{{item.price}}  名称:{{item.name}} {{item._id}}  
+  </view>
+</view>
