@@ -1,0 +1,4 @@
+.goods-box{
+  height: 130rpx;
+  border: 1rpx solid black;
+}

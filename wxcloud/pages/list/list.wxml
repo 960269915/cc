@@ -1,0 +1,8 @@
+<view>
+  <button bindtap="add">添加</button>
+  <view class="goods-box" wx:for="{{list}}" wx:key="index">
+    <text>{{index}}---</text>
+    <text>{{item.name}}</text>
+    <text>{{item.price}}</text>
+  </view>
+</view>

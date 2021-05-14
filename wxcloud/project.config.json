@@ -3,7 +3,7 @@
   "packOptions": {
     "ignore": []
   },
-  "cloudfunctionRoot":"clondfn/",    
+  "cloudfunctionRoot": "clondfn/",
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -24,7 +24,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": true,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -53,6 +53,7 @@
     "servePath": ""
   },
   "isGameTourist": false,
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

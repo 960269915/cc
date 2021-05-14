@@ -1,30 +1,29 @@
 Page({
-  onLoad(){
-
+  onLoad() {
   },
-  chooseImg(){
+  chooseImg() {
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
-      success :res=> {
+      success: res => {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
-        this.upload('图片.png',tempFilePaths[0])
+        this.upload('图片.png', tempFilePaths[0])
       }
     })
   },
-  chooseVideo(){
+  chooseVideo() {
     wx.chooseVideo({
-      sourceType: ['album','camera'],
+      sourceType: ['album', 'camera'],
       maxDuration: 60,
       camera: 'back',
-      success:(res)=> {
-        this.upload('视频.mp4',res.tempFilePath)
+      success: (res) => {
+        this.upload('视频.mp4', res.tempFilePath)
       }
     })
   },
-  upload(name,file){
+  upload(name, file) {
     wx.cloud.uploadFile({
       cloudPath: name, //上传到小程序服务器后的文件名称
       filePath: file, // 文件路径
@@ -34,6 +33,13 @@ Page({
     }).catch(error => {
       // handle error
     })
+  },
+  downFIle() {
+    wx.cloud.downloadFile({
+      fileID: 'cloud://caiyuntao-32d704.6361-caiyuntao-32d704-1257901087/图片.png'
+    }).then(res => {
+      console.log(res);
+    }) 
   }
 })
 

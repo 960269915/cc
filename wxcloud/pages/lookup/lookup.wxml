@@ -1,0 +1,7 @@
+<view>
+<text>多表查询，只能是云开发</text>
+<button bindtap="lookup">
+多表查询
+</button>
+</view>
+

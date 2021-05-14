@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/api/api",
+    "pages/lookup/lookup",
+    "pages/list/list",
     "pages/file/file",
     "pages/cloud/cloud",
     "pages/cmd/cmd",

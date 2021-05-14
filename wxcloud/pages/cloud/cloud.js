@@ -13,7 +13,7 @@ Page({
         name:'update',
         data:{ //向云函数传递数据，云函数的event接受数据
           id:'28ee4e3e605b44b20c61a3416b18d57a',
-          price:3
+          price:30
         }
       }).then(res=>{
         console.log(res);

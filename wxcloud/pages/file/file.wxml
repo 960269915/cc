@@ -6,4 +6,8 @@
   <view>
     <text bindtap="chooseVideo">上传视频</text>
     </view>
+
+    <view>
+    <text bindtap="downFIle">下载图片</text>
+    </view>
 </view>
