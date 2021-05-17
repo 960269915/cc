@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        left: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      //======================= 图片加载是异步的  先完成主任务log，当主任务全部执行完成以后，轮询任务队列，发现有图片加载的任务，执行图片加载的任务
+      function test1() {
+        function load(src, success, error) {
+          let img = new Image();
+          img.src = src
+          img.onload = () => {
+            success(img)
+          };
+          img.onerror = error;
+        }
+        load('./1.png', (img) => {
+          console.log('图片加载完成');
+          document.body.appendChild(img) //执行顺序2
+        }, () => {
+          console.log('图片加载失败');
+        })
+        console.log('我是主线任务'); // 执行顺序1
+      }
+
+      // test1()
+
+
+      //========================= 定时器会不断的进入任务队列，当主任务完成后，会不断轮询任务队列
+      function test2() {
+        // 定时器的列子
+        function interval(callback, delay = 50) {
+          let id = setInterval(() => {
+            callback(id)
+          }, delay)
+        }
+        interval((id) => {
+          let div = document.querySelector("div");
+          let left = parseInt(window.getComputedStyle(div).left);
+          div.style.left = left + 10 + 'px';
+          if (left >= 200) {
+            clearInterval(id) //清除任务队列的任务
+            interval((ids) => {
+              let width = parseInt(window.getComputedStyle(div).width);
+              div.style.width = width - 10 + 'px';
+              if (width <= 20) {
+                clearInterval(ids)
+              }
+            })
+          }
+        })
+        console.log('我是主线任务'); // 执行顺序1
+      }
+      // test2()
+
+
+      //====================== 任务排序 先进先出
+
+      function test3() {
+        function load(src, callback) {
+          let script = document.createElement('script'); //script也是异步的
+          script.src = src;
+          script.onload = callback;
+          document.body.appendChild(script)
+        }
+        // 加载文件是异步的，谁先加载完成，就先放入任务队列，也就先执行
+
+        // 此处2.js里面调用了1.js里面的方法，如果2.js先加载，就会报错。
+        // load('./js/1.js', () => {
+        //   aa()
+        // })
+        // load('./js/2.js', () => {
+        //   bb()
+        // })
+
+        load('./js/1.js', () => { //地狱回调
+          load('./js/2.js', () => {
+            bb()
+          })
+        })
+
+        console.log('我是主线任务');
+      }
+
+      // test3()
+
+      // ====================promise
+      // pending 准备阶段
+      // resolve 准备后的结果，成功
+      // reject 准备后的结果，失败
+      // promise 属于微观任务，定时器属于宏观任务，先执行微观，后执行宏观（有宏观队列和微观队列）
+      function test4() {
+        new Promise((resolve, reject) => {
+          resolve(1) //promise 状态一旦触发，就不可更改
+        }).then(() => { //then后面的代码，必须要等promise发出通知以后，才执行
+          console.log('succ');
+        }, () => {
+          console.log('err');
+        })
+      }
+
+      // test4()
+
+      // ================================执行顺序
+      function test5() {
+        setTimeout(() => { //宏任务
+          console.log('time1');
+        }, 0);
+
+        new Promise((resolve) => {
+          // resolve() //resolve放在同步任务前，也得等同步任务完成以后再执行
+          // console.log('promise2'); //promise 里面的Log也是同步任务，和外层的主任务一个级别
+          setTimeout(() => { //promise内部是同步任务，但是遇到宏任务，也需要等前面的宏任务完成
+            console.log('promise2');
+            resolve(); //resolve会产生微任务，执行顺序在宏任务之前，但是此处是在宏任务内触发的，所有也要等宏任务执行完
+          }, 0);
+        }).then(res => { //准确说promise返回状态后的代码，才属于微任务
+          console.log('promise-then3');
+          setTimeout(() => { //此处又新增了一个宏任务，按照先进先出的原则，会比第一个定时器后执行
+            console.log('promise-settime4');
+          }, 0);
+        })
+        console.log('cc5'); //主任务
+      }
+
+      // test5();
+
+
+      // ========================test6  链式调用
+      function test6() {
+        new Promise((resolve, reject) => {
+          resolve()
+        }).then(() => {
+          //默认会执行成功的回调，所以下面的then会执行
+          // return 2
+          return { //如果返回的对象里面包含then方法，就会被下个流程捕获
+            then(resolve, reject) {
+              resolve('succ')
+            }
+          }
+        }, (err) => {
+          console.log(err);
+        }).then((res) => {
+          console.log(res);
+        }, (err) => {
+          console.log(err);
+        })
+      }
+      test6()
+    </script>
+  </body>
+
+</html>
