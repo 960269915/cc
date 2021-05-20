@@ -230,5 +230,15 @@ Page({
     }).then(res=>{
       console.log(res);
     })
+  },
+  // 获取用户信息
+  getUser(){
+    wx.cloud.callFunction({
+      name:"getUser"
+    }).then(res=>{
+      // res.result.appid
+      // res.result.openid
+      console.log(res.result.openid);
+    })
   }
 })

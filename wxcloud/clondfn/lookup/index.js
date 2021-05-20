@@ -29,3 +29,16 @@ exports.main = async (event, context) => {
     }
   }) 
 }
+
+
+
+// 在云函数中，调用其他云函数
+// exports.main = async (event, context) => {
+//   return await cloud.callFunction({
+//     name: 'sum',
+//     data: {
+//       x: 1,
+//       y: 2,
+//     }
+//   })
+// }

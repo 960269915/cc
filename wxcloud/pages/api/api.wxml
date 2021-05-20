@@ -10,6 +10,7 @@
 <view bindtap="addgoods">添加一条数据到goods集合，会监听到</view>
 <view bindtap="agg">聚合</view>
 <view bindtap="lookup">连表查询</view>
+<view bindtap="getUser">获取用户信息</view>
 
 
 </view>
