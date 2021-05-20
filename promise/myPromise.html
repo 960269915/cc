@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 记住promise内部，所以方法执行，都要try catch 。 且都要用定时器包裹，因为不能快于同步任务
+      class HD {
+        static PENDING = 'pending';
+        static SUCC = 'succ';
+        static FAIL = 'fail';
+        constructor(executor) { //promise的回调函数
+          this.status = HD.PENDING; //状态
+          this.value = null; //值
+          this.callbacks = [];
+          try { //promise 内部实现了try catch
+            executor(this.resolve.bind(this), this.reject.bind(this));
+          } catch (error) {
+            this.reject(error)
+          }
+        }
+        resolve(value) { //同promise的resolve
+          if (this.status == HD.PENDING) { //判断状态，因为promise的状态是不可逆的，只有初始状态是pengding的时候，才允许修改状态
+            this.value = value;
+            this.status = HD.SUCC;
+            setTimeout(() => {
+              // 为什么then在resolve后触发，还能拿到 this.callbacks 因为这里有定时器，也是解决了构造函数内是定时器触发resolve
+              this.callbacks.map(callback => {
+                callback.succeefn(this.value)
+              })
+            });
+          }
+        }
+        reject(error) {
+          if (this.status == HD.PENDING) {
+            this.value = error;
+            this.status = HD.FAIL;
+            setTimeout(() => {
+              this.callbacks.map(callback => {
+                callback.errorfn(this.value)
+              })
+            });
+          }
+        }
+        then(succeefn, errorfn) {
+          // 处理没有传回调函数
+          if (typeof succeefn != "function") {
+            succeefn = () => {
+              return this.value;
+            }
+          }
+
+          if (typeof errorfn != "function") {
+            errorfn = () => {
+              return this.value;
+            }
+          }
+
+
+          return new HD((resolve, reject) => {
+            if (this.status == HD.PENDING) {
+              this.callbacks.push({ //如果在promise内部使用定时器，那么代码运行时，状态还是pendding,所以要添加到数组内，在回调内在循环调用
+                succeefn: (value) => {
+                  try { //也要捕获回调的异常
+                    let res = succeefn(value)
+                    resolve(res);
+                  } catch (error) {
+                    let err = errorfn(error)
+                    reject(err)
+                  }
+                },
+                errorfn: (value) => {
+                  try {
+                    let err = errorfn(value)
+                    reject(err)
+                  } catch (error) {
+                    let err = errorfn(error)
+                    reject(err)
+                  }
+                }
+              })
+            }
+          })
+        }
+      }
+
+
+      let p = new HD((resolve, reject) => {
+          setTimeout(() => {
+            // resolve("成功")
+            reject('失败')
+            console.log('后盾人');
+          }, 1000);
+        })
+        .then()
+        .then(res => {
+          console.log(res);
+        }).then(() => {
+          console.log(2222);
+        }, (err) => {
+          console.log(err);
+        })
+
+      console.log('同步代码');
+    </script>
+  </body>
+
+</html>

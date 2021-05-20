@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <html>
+    <input type="text" id="first">
+    <script>
+      // 这是主线程
+      console.log('项目运行');
+      var myWorker = new Worker('./js/work.js');
+      let first = document.querySelector("#first");
+
+      first.onchange = function () {
+        console.log('向work发送信息');
+        myWorker.postMessage([first.value]);
+      }
+
+      myWorker.onmessage = function (e) {
+        console.log('拿到work里面的信息' + e.data);
+      }
+      // myWorker.terminate();  终止work
+      console.log('项目继续运行');
+    </script>
+
+    </body>
+
+  </html>

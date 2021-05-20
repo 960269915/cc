@@ -143,12 +143,37 @@
         })
         console.log('cc5'); //主任务
       }
-
       // test5();
+
+      // ***************重点
+      // 这里最外层的就不说了。先是两个同步的then.reject。
+      // 直接就resolve了，所以i这里立马就加入微任务队列。接着同步执行下一个then.也把k加入微任务队列。到这里所有的红任务和主任务都执行完了。
+      // 就执行微任务队列里面的函数，先输出i.i执行完成了就把j加入微任务队列。输出k.下一轮再执行微任务时输出j
+      function test6() {
+        new Promise((resolve, reject) => {
+          resolve()
+        }).then(() => { //then是同步函数
+          new Promise((resolve, reject) => {
+            resolve()
+          }).then(() => {
+            console.log('I')
+          }).then(() => {
+            console.log('J')
+          })
+        }).then(() => {
+          console.log('K')
+        })
+      }
+      // test6()
+
+
+
+
+
 
 
       // ========================test6  链式调用
-      function test6() {
+      function test7() {
         new Promise((resolve, reject) => {
           resolve()
         }).then(() => {
@@ -156,18 +181,126 @@
           // return 2
           return { //如果返回的对象里面包含then方法，就会被下个流程捕获
             then(resolve, reject) {
-              resolve('succ')
+              resolve('haha')
             }
           }
-        }, (err) => {
-          console.log(err);
-        }).then((res) => {
+        }, null).then((res) => {
           console.log(res);
-        }, (err) => {
+        }, null)
+
+
+        new Promise((resolve, reject) => {
+            resolve()
+          })
+          .then()
+          .then()
+          .catch(() => {
+            // 此处会捕获到前面每个阶段发生的错误
+          })
+          .finally(() => {
+            console.log('不管成功和失败，都会执行');
+          })
+
+        function p1() {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve('succ1')
+            }, 1000);
+          })
+        }
+
+        function p2() {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve('succ2')
+            }, 1000);
+          })
+        }
+        // all 只要有一个返回状态为失败，都会走catch allSettled 成功或者失败都会返回   race 哪个返回的快，返回哪个的值
+        Promise.all([p1(), p2()]).then(res => { //Promise.all 也返回一个promise
+          console.log(res);
+        }).catch(err => {
           console.log(err);
         })
+
+
       }
-      test6()
+      // test7()
+
+      //======================== async await
+
+      async function test8() { // async函数的默认返回值是promise
+        function fn1() {
+          return new Promise((resolve) => {
+            resolve(22)
+          })
+        }
+
+        function fn2() {
+          return new Promise((resolve) => {
+            resolve(2)
+          })
+        }
+        try { //可以统一处理await的错误
+          let res1 = await fn1(); //await是then的语法糖
+          let res2 = await fn2();
+          console.log(res1, res2);
+
+        } catch (error) {
+          console.log(error);
+        }
+        console.log('haha');
+
+
+      }
+
+      // test8()
+
+      // ===========避免同步任务的阻塞
+      function test9() {
+        // 此时循环（理解为大型的运算操作）会阻塞下面的同步任务
+        // for(let i= 0;i<1000;i++){
+        //   // ...do
+        // }
+        // console.log(222);
+
+
+        // 解决 使用异步来执行大型的运算(前提后面的代码，不依赖前面的运算结果)
+        async function hd(num) {
+          let cout = 0;
+          let res = await Promise.resolve().then(() => {
+            for (let i = 0; i < num; i++) {
+              cout += num--;
+            }
+          });
+          return cout
+        }
+        hd(1000).then(res => {
+          console.log(res);
+        });
+        console.log(222);
+
+      }
+      // test9()
+
+      function test10() {
+        let cout = 0;
+        let num = 999999;
+
+        function hd() {
+          for (let i = 0; i < num; i++) {
+            cout += num--;
+          }
+          if (num > 0) {
+            setTimeout(hd); //解决办法，把耗时的任务放入异步队列（宏观和微观任务）
+          } else {
+            console.log(cout);
+          }
+        }
+        hd();
+        console.log(222);
+      }
+      test10();
     </script>
   </body>
 
