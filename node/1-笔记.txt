@@ -1,7 +1,13 @@
+=====
 __dirname 当前文件的物理路径
 
+=====
 npm i -D 开发环境 
 npm i -S 生成环境
 -g  全局安装
-
+=====
 npm i nodemon -g 
+=====
+jsonp 解决跨域原理
+前段代码 "www.test.a?callback='getData'"
+后端代码 res.wrire("getData()") 后端直接调用了前段的callback
