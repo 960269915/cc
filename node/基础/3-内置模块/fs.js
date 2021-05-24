@@ -48,4 +48,4 @@ const fsPromise = require("fs").promises
 // 可以用promise类型读取文件
 // fsPromise.readFile("./static1/log.txt").then(res => {
 //   console.log(res.toString());
-// })
+// })  
