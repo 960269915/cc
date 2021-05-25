@@ -11,3 +11,11 @@ npm i nodemon -g
 jsonp 解决跨域原理
 前段代码 "www.test.a?callback='getData'"
 后端代码 res.wrire("getData()") 后端直接调用了前段的callback
+
+
+MongoDB 
+database 数据库
+collection 数据库的表，或者集合
+document 行
+field 字段
+index 索引
