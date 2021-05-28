@@ -1,0 +1,29 @@
+use("test");
+
+//===插入数据
+//insert 和 save的区别 如果数据库中不存在name:22的数据，两个没有区别，都会更新。如果有，insert会报错，save会更新
+// db.zhoujielun.insert({
+//   name:"22"
+// })
+
+// ===删除
+// db.zhoujielun.remove({
+//   name:"22"
+// })
+
+// // ===修改数据（1查询条件，2修改的信息,3true找不到记录就创建，4true，匹配多次）
+// db.zhoujielun.update({
+//   name:"333"
+// },{
+// $set: {
+//   add: "更新了信息",
+//   date:new Date()
+// }})
+
+// ===查询
+// db.zhoujielun.find() //查询所有
+
+
+
+
+db.zhoujielun.find()
