@@ -4,6 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
+const cookieSession = require("cookie-session")
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -15,9 +20,13 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// 自己的路由鉴权中间件
+const auth = require("./utils/auth");
 // 路由
 var user = require("./routes/user")
+// app.use('/user', auth, user);
 app.use('/user', user);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

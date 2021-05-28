@@ -3,6 +3,8 @@ const userModel = require("../models/userModel")
 const formidable = require('formidable');
 const fs = require("fs");
 const path = require("path");
+const randomstring = require("randomstring");
+const jsonwebtoke = require("jsonwebtoken")
 
 const reg = async (req, res, next) => {
   const data = req.body;
@@ -45,6 +47,43 @@ const delUser = async (req, res, next) => {
   }
 }
 
+const login = async (req, res) => {
+  if (req.body.name == '' || req.body.password == '') {
+    res.send("账号或者密码错误");
+    return;
+  }
+  let findVal = await userModel.findUser(req.body.name);
+  if (findVal) {
+    if (req.body.password != findVal.password) {
+      res.send("密码错误")
+      return;
+    }
+    // let session = randomstring.generate(); //创建一个随机数
+    // res.set("Set-Cookie", `sessionId=${session};Path=/;HttpOnly`) //给前端设置cookie,设置以后，前端所有的请求，都会携带cookie
+    // 使用cookie-session中间件设置session
+    req.session.username = req.body.name;
+    res.send({
+      msg: "登录成功"
+    })
+  } else {
+    res.send("账号错误")
+  }
+}
+
+const token = (req, res) => {
+  // hahah 为加密的算法
+  let tokenVal = jsonwebtoke.sign({
+    username: 12223
+  }, "hahah")
+  console.log(tokenVal + '----');
+  res.send(tokenVal)
+}
+
+const loginOut = (req, res) => {
+  req.session = null; //移除session
+  res.send("登出成功")
+}
+
 
 const upload = async (req, res) => {
   const form = formidable({
@@ -74,5 +113,8 @@ module.exports = {
   reg,
   getList,
   delUser,
-  upload
+  upload,
+  login,
+  loginOut,
+  token
 }
