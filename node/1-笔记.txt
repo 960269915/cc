@@ -12,6 +12,11 @@ jsonp 解决跨域原理
 前段代码 "www.test.a?callback='getData'"
 后端代码 res.wrire("getData()") 后端直接调用了前段的callback
 
+====================
+mongod --config 应用配置文件
+mongod --dbpath ~/data/db 指定数据库路径
+mongod  mongo  启动
+use admin db.shutdownServer() 关闭
 
 MongoDB 
 database 数据库
@@ -19,3 +24,4 @@ collection 数据库的表，或者集合
 document 行
 field 字段
 index 索引
+
