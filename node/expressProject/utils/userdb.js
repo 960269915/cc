@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 // }) //连接数据库
 
 
-const conn = mongoose.createConnection("mongodb: //127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb", {
+const conn = mongoose.createConnection("mongodb://127.0.0.1:27017", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
