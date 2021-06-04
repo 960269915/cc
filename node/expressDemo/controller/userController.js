@@ -71,12 +71,14 @@ const login = async (req, res) => {
 }
 
 const token = (req, res) => {
-  // hahah 为加密的算法
+  // hahah 为加密的秘钥，自己随便定义（有秘钥的叫对称加密，不是最安全）
+  // 非对称加密 比如git 有私钥和公钥  公钥是根据私钥生成的 
   let tokenVal = jsonwebtoke.sign({
     username: 12223
-  }, "hahah")
-  console.log(tokenVal + '----');
-  res.send(tokenVal)
+  }, "haha")
+  // 解密 
+  let decoded = jsonwebtoke.verify(tokenVal, 'haha')
+  res.send(decoded)
 }
 
 const loginOut = (req, res) => {
