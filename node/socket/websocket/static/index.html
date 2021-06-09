@@ -6,10 +6,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      #chart-box {
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+        overflow: scroll;
+      }
+    </style>
   </head>
 
   <body>
-    22
+    <div id="chart-box">
+
+    </div>
+
+    <input type="text" id="inputele">
+    <button id="btn">发送</button>
+    <button id="close">关闭</button>
+
+
   </body>
+
+  <script>
+    window.onload = function () {
+      let socket = new WebSocket("ws://localhost:8080/");
+      let chartbox = document.getElementById("chart-box");
+      let inputele = document.getElementById("inputele");
+      let btn = document.getElementById("btn");
+      let close = document.getElementById("close");
+      socket.onopen = () => {
+        console.log('客户端开启了socket');
+        socket.send("大家好")
+      }
+      close.onclick = function () {
+        socket.close();
+      }
+      btn.onclick = function () {
+        let val = inputele.value;
+        socket.send(val); //发送数据给服务端
+      }
+
+      socket.onmessage = (msg) => {
+        console.log(`接受服务端发送的数据--${msg.data.toString()}`);
+        let pele = document.createElement("p")
+        pele.innerText = msg.data.toString();
+        chartbox.appendChild(pele);
+      }
+      socket.onclose = () => {
+        console.log('客户端关闭了socket');
+      }
+
+
+
+      function add(a) {
+        var sum = 0;
+        sum += a;
+        return function addin(b) {
+          if (arguments.length === 0) {
+            return sum
+          } else {
+            sum += b;
+            return addin
+          }
+        }
+      }
+
+      console.log(add(1)(2)(3)());
+
+    }
+  </script>
 
 </html>
