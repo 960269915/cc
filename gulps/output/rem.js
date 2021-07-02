@@ -1,1 +1,0 @@
-"use strict";!function(e,t){function n(){var n=t.innerWidth||e.documentElement.clientWidth||e.body.clientWidth;n&&(n=100*n/375,i.style.fontSize=n+"px")}var i=t.document.documentElement,d="orientationchange"in window?"orientationchange":"resize";e.addEventListener&&(t.addEventListener(d,n,!1),e.addEventListener("DOMContentLoaded",n,!1),n())}(document,window);
