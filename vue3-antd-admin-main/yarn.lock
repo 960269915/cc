@@ -7456,10 +7456,10 @@ qs@6.7.0:
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz?cache=0&sync_timestamp=1610598235973&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
-qs@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.npm.taobao.org/qs/download/qs-5.2.1.tgz?cache=0&sync_timestamp=1610598235973&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-5.2.1.tgz#801fee030e0b9450d6385adc48a4cc55b44aedfc"
-  integrity sha1-gB/uAw4LlFDWOFrcSKTMVbRK7fw=
+qs@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.npm.taobao.org/qs/download/qs-6.0.4.tgz#51019d84720c939b82737e84556a782338ecea7b"
+  integrity sha1-UQGdhHIMk5uCc36EVWp4Izjs6ns=
 
 qs@~6.5.2:
   version "6.5.2"
