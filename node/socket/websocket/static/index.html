@@ -59,20 +59,20 @@
 
 
 
-      function add(a) {
-        var sum = 0;
-        sum += a;
-        return function addin(b) {
-          if (arguments.length === 0) {
-            return sum
-          } else {
-            sum += b;
-            return addin
-          }
-        }
-      }
+      // function add(a) {
+      //   var sum = 0;
+      //   sum += a;
+      //   return function addin(b) {
+      //     if (arguments.length === 0) {
+      //       return sum
+      //     } else {
+      //       sum += b;
+      //       return addin
+      //     }
+      //   }
+      // }
 
-      console.log(add(1)(2)(3)());
+      // console.log(add(1)(2)(3)());
 
     }
   </script>
