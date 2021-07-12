@@ -1,1 +1,9 @@
-koa-router
+koa-router 路由
+
+koa-bodyparser 获取路由参数
+
+koa-static 静态资源
+
+koa-session-minimal session
+
+

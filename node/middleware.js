@@ -1,3 +1,4 @@
+// ===============express使用的同步中间件
 // 中间件机制  处理一些业务，完成后，调用next，会继续执行下面的代码
 const middleware1 = (req, res, next) => {
   // 处理一些逻辑
@@ -8,7 +9,6 @@ const middleware1 = (req, res, next) => {
 
 const middleware2 = (req, res, next) => {
   console.log(2);
-  // 当中间件有异步时
   setTimeout(() => {
     next()
   }, 2000)

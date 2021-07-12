@@ -10,6 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "@koa/router": "^10.0.0",
-    "koa": "^2.13.1"
+    "install": "^0.13.0",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-session-minimal": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "npm": "^7.19.1"
   }
 }
