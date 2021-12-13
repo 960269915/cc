@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--    namespace是区分不同的mapper-->
+<!--    namespace可以关联interface地址-->
+<mapper namespace="web.batis.myinterface.StudentInterface">
+    <resultMap id="test" type="web.Student">
+<!--        当类中有多个构造方法时，需要手动写对应的-->
+        <constructor>
+            <arg column="sid" javaType="String"/>
+            <arg column="name" javaType="String"/>
+            <arg column="sex" javaType="String"/>
+            <arg column="score" javaType="Integer"/>
+        </constructor>
+
+<!--        当数据库字段和类字段不对应，需要映射时，可以使用resultMap-->
+<!--        resultType值为resultMap的id-->
+<!--        column为数据库字段 property为类的字段-->
+        <result column="sid" property="xxx"/>
+
+    </resultMap>
+
+    <!--    selectStudent 为当前mapperid,resultType为需要映射的对象，如果没有实体类，可以直接映射为Map-->
+    <select id="selectStudent" resultType="web.Student">
+        select * from student
+    </select>
+
+    <select id="getOne" resultType="web.Student">
+        select * from student where sid = #{sid}
+    </select>
+
+    <insert id="addStudent">
+        insert into student values (#{sid},#{name},#{sex},#{score})
+    </insert>
+
+    <delete id="del">
+        delete from student where sid = #{sid}
+    </delete>
+
+
+
+
+</mapper>
