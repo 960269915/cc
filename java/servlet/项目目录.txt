@@ -1,0 +1,6 @@
+main 下的java 为后端代码
+
+
+
+resources 为moven项目标准静态资源
+webapp 为前端代码

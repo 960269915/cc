@@ -1,0 +1,28 @@
+1、主代码放在main\java\ 文件夹内
+2、resources 文件夹内为静态资源
+3、test文件夹为测试代码
+4、target为编译打包的代码
+5、pom为项目配置
+
+
+---maven
+
+===scope dependency依赖作用域(类似于vue项目的开发依赖和生成依赖，不同的作用域值，决定了是否会打包到最后的项目包)
+1、compile 默认，编译，运行，测试均有效
+2、provided 编译，测试时有效，运行时无效 如lombok只在编译时需要，编译完成后，已转为代码了，因此不需要在运行时存在
+3、runtime 运行、测试时有效，但是编译代码时无效，如jdbc实现，会用到JDK，但是JDK在我们本地是自带的，所有不需要JDK自带的依赖
+4、test 只在测试时有效 如Junit,只在测试截断需要
+
+===当前包信息
+1、子包会继承父包的依赖
+2、子包之间可以相互引用（可以使用不用包之间的类等）
+<groupId>org.example</groupId>
+<artifactId>java-maven</artifactId>
+<version>1.0-SNAPSHOT</version>
+
+===moven常用声明周期（点击右上角moven出现）
+1、clean 清理target包
+2、compile 将项目编译成.class文件
+3、install 将当前项目发布到当前仓库（当前仓库是自己装的moven依赖的地方）
+4、package 将项目打包
+5、java -jar 打出来的包 运行
