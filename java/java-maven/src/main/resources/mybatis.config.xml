@@ -18,7 +18,7 @@
                 <!--                以下为配置项-->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <!--                数据库-->
-                <property name="url" value="jdbc:mysql://localhost:3306/booksysone"/>
+                <property name="url" value="jdbc:mysql://localhost:3307/booksysone"/>
                 <!--                用户名-->
                 <property name="username" value="root"/>
                 <!--                密码-->

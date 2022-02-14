@@ -1,0 +1,319 @@
+2022-01-25 11:39:50.789  INFO 7919 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 7919 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 11:39:50.790  INFO 7919 --- [main] com.study.SpringbootApplication          : No active profile set, falling back to default profiles: default
+2022-01-25 11:39:52.061  INFO 7919 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 11:39:52.067  INFO 7919 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 11:39:52.068  INFO 7919 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 11:39:52.125  INFO 7919 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 11:39:52.125  INFO 7919 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
+2022-01-25 11:39:52.682  INFO 7919 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 11:39:52.699  INFO 7919 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.385 seconds (JVM running for 3.285)
+2022-01-25 11:41:59.877  INFO 7950 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 7950 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 11:41:59.879  INFO 7950 --- [main] com.study.SpringbootApplication          : No active profile set, falling back to default profiles: default
+2022-01-25 11:42:00.959  INFO 7950 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 11:42:00.965  INFO 7950 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 11:42:00.965  INFO 7950 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 11:42:01.024  INFO 7950 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 11:42:01.024  INFO 7950 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1105 ms
+2022-01-25 11:42:01.673  INFO 7950 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 11:42:01.694  INFO 7950 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.345 seconds (JVM running for 3.267)
+2022-01-25 11:42:07.618  INFO 7955 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 7955 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 11:42:07.620  INFO 7955 --- [main] com.study.SpringbootApplication          : No active profile set, falling back to default profiles: default
+2022-01-25 11:42:08.989  INFO 7955 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 11:42:08.994  INFO 7955 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 11:42:08.995  INFO 7955 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 11:42:09.042  INFO 7955 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 11:42:09.042  INFO 7955 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1366 ms
+2022-01-25 11:42:09.549  INFO 7955 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 11:42:09.564  INFO 7955 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.435 seconds (JVM running for 3.022)
+2022-01-25 11:42:55.438  INFO 7969 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 7969 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 11:42:55.440  INFO 7969 --- [main] com.study.SpringbootApplication          : No active profile set, falling back to default profiles: default
+2022-01-25 11:42:56.663  INFO 7969 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 11:42:56.669  INFO 7969 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 11:42:56.670  INFO 7969 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 11:42:56.724  INFO 7969 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 11:42:56.724  INFO 7969 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1233 ms
+2022-01-25 11:42:57.377  INFO 7969 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 11:42:57.393  INFO 7969 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.52 seconds (JVM running for 3.333)
+2022-01-25 11:51:20.887  INFO 7969 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 11:51:20.888  INFO 7969 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-25 11:51:20.894  INFO 7969 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-01-25 11:51:20.929 ERROR 7969 --- [http-nio-8080-exec-1] com.study.controller.MainController      : 访问了index
+2022-01-25 11:58:26.921  INFO 8167 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8167 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 11:58:26.923  INFO 8167 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 11:58:28.288  INFO 8167 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 11:58:28.298  INFO 8167 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 11:58:28.299  INFO 8167 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 11:58:28.372  INFO 8167 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 11:58:28.373  INFO 8167 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1402 ms
+2022-01-25 11:58:28.941  INFO 8167 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 11:58:28.955  INFO 8167 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.533 seconds (JVM running for 3.084)
+2022-01-25 12:01:46.313  INFO 8235 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8235 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 12:01:46.315  INFO 8235 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 12:01:47.567  INFO 8235 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 12:01:47.574  INFO 8235 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 12:01:47.574  INFO 8235 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 12:01:47.637  INFO 8235 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 12:01:47.637  INFO 8235 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1280 ms
+2022-01-25 12:01:48.147  INFO 8235 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 12:01:48.165  INFO 8235 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.324 seconds (JVM running for 2.821)
+2022-01-25 12:02:36.267  INFO 8247 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8247 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 12:02:36.270  INFO 8247 --- [main] com.study.SpringbootApplication          : The following profiles are active: prod
+2022-01-25 12:02:37.547  INFO 8247 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 12:02:37.557  INFO 8247 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 12:02:37.558  INFO 8247 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 12:02:37.628  INFO 8247 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 12:02:37.628  INFO 8247 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1319 ms
+2022-01-25 12:02:38.229  INFO 8247 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 12:02:38.250  INFO 8247 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.43 seconds (JVM running for 2.931)
+2022-01-25 14:19:17.238  INFO 8438 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8438 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:19:17.240  INFO 8438 --- [main] com.study.SpringbootApplication          : The following profiles are active: prod
+2022-01-25 14:19:19.015  INFO 8438 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 14:19:19.023  INFO 8438 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:19:19.023  INFO 8438 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:19:19.087  INFO 8438 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:19:19.088  INFO 8438 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1776 ms
+2022-01-25 14:19:19.371  WARN 8438 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.name' in value "${test.name}"
+2022-01-25 14:19:19.375  INFO 8438 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-01-25 14:19:19.389  INFO 8438 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-01-25 14:19:19.415 ERROR 8438 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.name' in value "${test.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.study.SpringbootApplication.main(SpringbootApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'test.name' in value "${test.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 17 common frames omitted
+
+2022-01-25 14:19:38.485  INFO 8445 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8445 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:19:38.487  INFO 8445 --- [main] com.study.SpringbootApplication          : The following profiles are active: prod
+2022-01-25 14:19:39.762  INFO 8445 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 14:19:39.770  INFO 8445 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:19:39.771  INFO 8445 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:19:39.823  INFO 8445 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:19:39.823  INFO 8445 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1281 ms
+2022-01-25 14:19:40.347  INFO 8445 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 14:19:40.360  INFO 8445 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.347 seconds (JVM running for 2.872)
+2022-01-25 14:20:28.222  INFO 8456 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8456 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:20:28.225  INFO 8456 --- [main] com.study.SpringbootApplication          : The following profiles are active: config.dev
+2022-01-25 14:20:29.455  INFO 8456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 14:20:29.462  INFO 8456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:20:29.462  INFO 8456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:20:29.523  INFO 8456 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:20:29.523  INFO 8456 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1255 ms
+2022-01-25 14:20:29.609  WARN 8456 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mainController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImp': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/cc/Desktop/myproject/cc/java/springboot/target/classes/com/study/mapper/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-01-25 14:20:29.611  INFO 8456 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-01-25 14:20:29.637  INFO 8456 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-01-25 14:20:29.650 ERROR 8456 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles config.dev are currently active).
+
+2022-01-25 14:20:56.486  INFO 8462 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8462 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:20:56.488  INFO 8462 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 14:20:57.681  INFO 8462 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 14:20:57.687  INFO 8462 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:20:57.687  INFO 8462 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:20:57.738  INFO 8462 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:20:57.738  INFO 8462 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1209 ms
+2022-01-25 14:20:58.260  INFO 8462 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 14:20:58.272  INFO 8462 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.269 seconds (JVM running for 2.937)
+2022-01-25 14:33:56.115  INFO 8545 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8545 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:33:56.122  INFO 8545 --- [main] com.study.SpringbootApplication          : No active profile set, falling back to default profiles: default
+2022-01-25 14:33:57.420  INFO 8545 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 14:33:57.426  INFO 8545 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:33:57.426  INFO 8545 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:33:57.475  INFO 8545 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:33:57.475  INFO 8545 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1311 ms
+2022-01-25 14:33:57.694  WARN 8545 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.name' in value "${test.name}"
+2022-01-25 14:33:57.697  INFO 8545 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-01-25 14:33:57.712  INFO 8545 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-01-25 14:33:57.729 ERROR 8545 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.name' in value "${test.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.study.SpringbootApplication.main(SpringbootApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'test.name' in value "${test.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 17 common frames omitted
+
+2022-01-25 14:35:40.143  INFO 8560 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8560 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:35:40.145  INFO 8560 --- [main] com.study.SpringbootApplication          : No active profile set, falling back to default profiles: default
+2022-01-25 14:35:41.344  INFO 8560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-25 14:35:41.350  INFO 8560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:35:41.350  INFO 8560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:35:41.405  INFO 8560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:35:41.406  INFO 8560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1225 ms
+2022-01-25 14:35:41.943  INFO 8560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-25 14:35:41.967  INFO 8560 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.252 seconds (JVM running for 2.756)
+2022-01-25 14:39:31.619  INFO 8605 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8605 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:39:31.620  INFO 8605 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 14:39:32.867  INFO 8605 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-01-25 14:39:32.874  INFO 8605 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:39:32.874  INFO 8605 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:39:32.930  INFO 8605 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:39:32.931  INFO 8605 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1269 ms
+2022-01-25 14:39:33.441  INFO 8605 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-01-25 14:39:33.457  INFO 8605 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.308 seconds (JVM running for 2.996)
+2022-01-25 14:39:50.968  INFO 8612 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8612 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:39:50.972  INFO 8612 --- [main] com.study.SpringbootApplication          : The following profiles are active: product
+2022-01-25 14:39:52.363  INFO 8612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-01-25 14:39:52.369  INFO 8612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:39:52.369  INFO 8612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:39:52.420  INFO 8612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:39:52.421  INFO 8612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1390 ms
+2022-01-25 14:39:53.118  INFO 8612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-01-25 14:39:53.142  INFO 8612 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.771 seconds (JVM running for 3.267)
+2022-01-25 14:41:10.986  INFO 8631 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8631 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:41:10.989  INFO 8631 --- [main] com.study.SpringbootApplication          : The following profiles are active: product
+2022-01-25 14:41:13.602  INFO 8631 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-01-25 14:41:13.614  INFO 8631 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:41:13.615  INFO 8631 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:41:13.695  INFO 8631 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:41:13.696  INFO 8631 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2662 ms
+2022-01-25 14:41:14.345  INFO 8631 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-01-25 14:41:14.385  INFO 8631 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 3.99 seconds (JVM running for 4.622)
+2022-01-25 14:41:19.299  INFO 8638 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8638 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:41:19.302  INFO 8638 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 14:41:21.139  INFO 8638 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-01-25 14:41:21.157  INFO 8638 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:41:21.158  INFO 8638 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:41:21.221  INFO 8638 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:41:21.222  INFO 8638 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1858 ms
+2022-01-25 14:41:22.001  INFO 8638 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-01-25 14:41:22.040  INFO 8638 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 3.474 seconds (JVM running for 4.218)
+2022-01-25 14:43:55.865  INFO 8661 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8661 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 14:43:55.867  INFO 8661 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 14:43:57.661  INFO 8661 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-01-25 14:43:57.668  INFO 8661 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 14:43:57.669  INFO 8661 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 14:43:57.730  INFO 8661 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 14:43:57.730  INFO 8661 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1808 ms
+2022-01-25 14:43:58.541  INFO 8661 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-01-25 14:43:58.562  INFO 8661 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 3.431 seconds (JVM running for 4.168)
+2022-01-25 15:01:15.417  INFO 8816 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8816 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 15:01:15.419  INFO 8816 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 15:01:16.650  INFO 8816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-01-25 15:01:16.707  INFO 8816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 15:01:16.707  INFO 8816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 15:01:16.781  INFO 8816 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 15:01:16.782  INFO 8816 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1319 ms
+2022-01-25 15:01:17.318  INFO 8816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-01-25 15:01:17.330  INFO 8816 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.385 seconds (JVM running for 2.984)
+2022-01-25 15:01:41.162  INFO 8829 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8829 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 15:01:41.163  INFO 8829 --- [main] com.study.SpringbootApplication          : The following profiles are active: product
+2022-01-25 15:01:42.374  INFO 8829 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2022-01-25 15:01:42.379  INFO 8829 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 15:01:42.379  INFO 8829 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 15:01:42.434  INFO 8829 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 15:01:42.434  INFO 8829 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1228 ms
+2022-01-25 15:01:42.960  INFO 8829 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2022-01-25 15:01:42.974  INFO 8829 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.32 seconds (JVM running for 2.855)
+2022-01-25 15:03:58.089  INFO 8829 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 15:03:58.092  INFO 8829 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-25 15:03:58.098  INFO 8829 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-01-25 15:03:58.198 ERROR 8829 --- [http-nio-8888-exec-1] com.study.controller.MainController      : 访问了index
+2022-01-25 15:04:02.771 ERROR 8829 --- [http-nio-8888-exec-3] com.study.controller.MainController      : 访问了index
+2022-01-25 15:04:06.886 ERROR 8829 --- [http-nio-8888-exec-4] com.study.controller.MainController      : 访问了index
+2022-01-25 15:06:02.775  INFO 8873 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8873 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 15:06:02.778  INFO 8873 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 15:06:04.358  INFO 8873 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-01-25 15:06:04.365  INFO 8873 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 15:06:04.366  INFO 8873 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 15:06:04.422  INFO 8873 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 15:06:04.422  INFO 8873 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1594 ms
+2022-01-25 15:06:05.054  INFO 8873 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-01-25 15:06:05.075  INFO 8873 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.812 seconds (JVM running for 3.802)
+2022-01-25 15:07:05.442  INFO 8873 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 15:07:05.443  INFO 8873 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-25 15:07:05.449  INFO 8873 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-01-25 15:07:05.565 ERROR 8873 --- [http-nio-9999-exec-1] com.study.controller.MainController      : 访问了index
+2022-01-25 15:09:18.039  INFO 8968 --- [main] com.study.SpringbootApplicationTests     : Starting SpringbootApplicationTests using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 8968 (started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 15:09:18.041  INFO 8968 --- [main] com.study.SpringbootApplicationTests     : The following profiles are active: dev
+2022-01-25 15:09:22.152  INFO 8968 --- [main] com.study.SpringbootApplicationTests     : Started SpringbootApplicationTests in 4.721 seconds (JVM running for 6.221)
+2022-01-25 17:11:45.513  INFO 11622 --- [main] com.study.SpringbootApplication          : Starting SpringbootApplication using Java 1.8.0_301 on ccs-MacBook-Air.local with PID 11622 (/Users/cc/Desktop/myproject/cc/java/springboot/target/classes started by cc in /Users/cc/Desktop/myproject/cc/java/springboot)
+2022-01-25 17:11:45.515  INFO 11622 --- [main] com.study.SpringbootApplication          : The following profiles are active: dev
+2022-01-25 17:11:46.696  INFO 11622 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-01-25 17:11:46.703  INFO 11622 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-25 17:11:46.703  INFO 11622 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 17:11:46.762  INFO 11622 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-25 17:11:46.763  INFO 11622 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1207 ms
+2022-01-25 17:11:47.363  INFO 11622 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2022-01-25 17:11:47.389  INFO 11622 --- [main] com.study.SpringbootApplication          : Started SpringbootApplication in 2.448 seconds (JVM running for 3.216)
+2022-01-25 17:11:49.258  INFO 11622 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 17:11:49.265  INFO 11622 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-25 17:11:49.271  INFO 11622 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-01-25 17:11:49.381 ERROR 11622 --- [http-nio-9999-exec-1] com.study.controller.MainController      : 访问了index

@@ -1,4 +1,3 @@
-import Function.MyFunction;
 import lombok.extern.java.Log;
 
 import java.io.FileInputStream;
@@ -14,8 +13,9 @@ public class Main {
     //        sout快捷键
     public static void main (String[] args){
 //        log.log(Level.WARNING,"我是日志信息11");
-        MyFunction myFunction = new MyFunction();
-        myFunction.test();
+
+
+
     }
 
 //    日志打印
