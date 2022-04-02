@@ -1,6 +1,6 @@
 #开发环境
 server:
-  port: 9999
+  port: 8888
 spring:
   datasource:
     name: root
