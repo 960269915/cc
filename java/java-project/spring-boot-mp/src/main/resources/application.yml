@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: caiyuntao@1992
+    url: jdbc:mysql://localhost:3306/mybatis-plus
+  mvc:
+    pathmatch:
+#      配置丝袜哥
+      matching-strategy: ant_path_matcher
+#      redis配置
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+mybatis-plus:
+  configuration:
+#    显示sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-enums-package:
+#    配置枚举包的扫描路径
+    com.example.springbootmp.enums
+  global-config:
+    db-config:
+#      配置数据库的逻辑删除,没删除为0，删除为1
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+
+
+
