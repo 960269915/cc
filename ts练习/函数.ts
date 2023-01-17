@@ -67,6 +67,4 @@ fn5("cc", (age) => {
   return "" + age;
 });
 
-
-
-https://doc.houdunren.com/typescript/2%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B.html#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0
+// https://doc.houdunren.com/typescript/2%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B.html#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0
