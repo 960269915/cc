@@ -1,4 +1,0 @@
-#springboot的所有配置
-spring:
-  profiles:
-    active: '@environment@'

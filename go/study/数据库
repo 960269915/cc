@@ -1,0 +1,8 @@
+=================mysql
+go get -u github.com/go-sql-driver/mysql   下载驱动
+go mod tidy
+
+
+=============== orm 数据库表和对象隐射
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/mysql

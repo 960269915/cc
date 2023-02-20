@@ -1,9 +1,0 @@
-#测试环境
-server:
-  port: 8888
-spring:
-  datasource:
-    name: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/study
