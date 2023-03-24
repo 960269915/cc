@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    ========================引入外部配置文件-->
+    <properties resource="db.properties"></properties>
+
+
+<!--    =====================设置-->
+    <settings>
+<!--        开启日志-->
+        <setting name="logImpl" value="LOG4J"/>
+<!--        开启数据库字段转为驼峰-->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+<!--    ===========================设置别名-->
+    <typeAliases>
+<!--        别名,xml文件中的类别名，比如resultType-->
+        <typeAlias type="com.entity.School" alias="School"></typeAlias>
+<!--        <package name="com.entity"/> 扫描entity下的所有包，别名为类名首字母小写-->
+    </typeAliases>
+
+<!--    default 默认使用的的环境-->
+    <environments default="development">
+<!--    development 环境名称-->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+
+    <mappers>
+<!--    ===================== 此处注册所有的mapper-->
+        <mapper resource="SchoolMapper.xml"/>
+        <mapper resource="MyClassMapper.xml"/>
+    </mappers>
+
+</configuration>

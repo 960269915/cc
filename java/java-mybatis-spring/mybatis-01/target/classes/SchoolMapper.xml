@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--如果没有sql 提示 把https 改为http就可以了-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 绑定一个对应的dao接口-->
+<mapper namespace="com.mapper.SchoolMapper">
+<!--    id为SchoolDao的方法名称-->
+<!--    resultType为方法返回的数据类型实例-->
+<!--    parameterType 方法传递的参数类型-->
+
+<!--    结果集隐射，解决查询时，数据库字段和实体类字段不一样的问题,type为需要关联的实体类-->
+    <resultMap id="SchoolMap" type="School">
+<!--        column数据库字段  property实体类字段-->
+        <id column="schoolid" property="id"></id>
+        <result column="school_name" property="name"></result>
+    </resultMap>
+    <select id="getSchoolList" resultMap="SchoolMap">
+        select * from school
+    </select>
+
+    <select id="getSchoolById" resultType="School" parameterType="int">
+        select * from school where schoolid = #{id}
+    </select>
+
+<!--    记住增删改，需要提交事务-->
+    <insert id="insertSchool"  parameterType="School">
+#         name为School对象的参数
+        insert into school(name) values(#{name})
+    </insert>
+
+<!--    传入map-->
+    <insert id="insertSchoolMap"  parameterType="map">
+        insert into school(name) values(#{userName})
+    </insert>
+
+    <update id="updateSchoolById" parameterType="School">
+        update school set name=#{name} where schoolid = #{schoolid}
+    </update>
+
+    <delete id="delUserById" parameterType="int">
+        delete from school where schoolid = #{id}
+    </delete>
+
+<!--    一对多映射，集合-->
+    <resultMap id="getMyClassMap" type="com.entity.School">
+        <id property="id" column="sid"/>
+        <result property="schoolName" column="sname"/>
+        <result property="schoolName" column="sname"/>
+        <collection property="myClass" ofType="com.entity.MyClass">
+            <result property="name" column="cname"/>
+            <result property="id" column="cid"/>
+            <result property="schoolId" column="cschoolid"/>
+        </collection>
+    </resultMap>
+    <select id="getMyClass" resultMap="getMyClassMap">
+        SELECT s.school_name sname,s.id sid,c.name cname,c.id cid,c.school_id cschoolid from school s LEFT JOIN class c ON s.id = c.school_id where s.id=#{sid}
+    </select>
+
+
+
+
+</mapper>
+
+
+
+
+

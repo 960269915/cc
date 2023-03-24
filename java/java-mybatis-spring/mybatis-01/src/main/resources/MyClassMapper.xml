@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.MyClassMapper">
+
+
+<!--    多对1映射，对象-->
+    <resultMap id="classSchool" type="com.entity.MyClass">
+        <result property="name" column="cname"/>
+<!--        association 对象-->
+<!--        collection 集合-->
+        <association property="school"  javaType="com.entity.School">
+            <result property="schoolName" column="sname"/>
+            <result property="id" column="sid"/>
+        </association>
+
+
+    </resultMap>
+
+    <select id="getMyClass" resultMap="classSchool">
+        select c.name cname,c.id cid,s.school_name sname,s.id sid from class c,school s where c.school_id = s.id;
+    </select>
+
+<!--    if-->
+    <select id="getMyClassIf" parameterType="map" resultType="com.entity.MyClass">
+        select * from class
+        <where>
+            <if test="name != null">
+                and name= #{name}
+            </if>
+            <if test="id != null">
+                and id= #{id}
+            </if>
+        </where>
+    </select>
+
+
+<!--    switch-->
+    <select id="getMyClassWhen" parameterType="map" resultType="com.entity.MyClass">
+        select * from class
+        <where>
+            <choose>
+                <when test="name != null">
+                    and name = #{name}
+                </when>
+                <when test="id != null">
+                    and id = #{id}
+                </when>
+                <otherwise>
+                    and school_id = #{school_id}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <update id="updateMyClass" parameterType="map">
+        update class
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+        </set>
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
+    </update>
+
+<!--    foreach本质是拼接sql-->
+<!--    查询id为1 2 3的-->
+<!--    ids为传入的需要查询的id，idItem为每一项-->
+<!--    open="and (" close=")" separator="or" 是在拼接and (id=1 or id=2 or id=3)-->
+<!--    也可以直接使用In查询-->
+    <select id="getMyClassForEach" parameterType="map" resultType="com.entity.MyClass">
+<!--        select id,name from class where id in (-->
+<!--        <foreach collection="ids" item="id" separator=",">-->
+<!--             #{id}-->
+<!--        </foreach>-->
+<!--        )-->
+       select * from class
+        <where>
+            <foreach collection="ids" item="idItem" open="and (" close=")" separator="or">
+                id=#{idItem}
+            </foreach>
+        </where>
+    </select>
+
+
+
+
+
+</mapper>
+
+
+
+
+

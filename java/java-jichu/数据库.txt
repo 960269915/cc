@@ -1,0 +1,70 @@
+================================================数据库列的数据类型
+数值，使用int，金融数字使用decimal
+字符串，使用varchar，对应Java的string
+时间和日期，date为日期，time为时间，date-time时间日期
+null代表空值
+
+==============================================数据库列的数据属性
+无符号，不能为负数
+零填充 长度设置为3 即为005
+自增 在上条数据的基础上自增，通常设置唯一的主键，必须为整数类型
+非空，如果存储数据，不赋值就报错
+
+================================================= 操作符
+> < = != <= >=
+BETWEEN 2 AND 3 2和3之间
+AND 且
+OR  或
+Not 非
+
+================================================运算符
+IS NOT NULL
+IS NULL
+Like a like 'a%' %代表0到任意字符 _代表1个字符
+IN a in (a1,a2)
+==================================================数据库语法
+插入
+insert into 表名 (key1，key2...) values (val1,val2,...)
+更新
+UPDATE 表名 SET 字段1 = 值1,字段2 = 值2 WHERE 查询条件
+删除
+DELETE FROM 表名 查询条件
+
+===================================================查询
+
+SELECT name AS 学生名字 FROM student        AS为别名
+SELECT DISTINCT sex FROM student  DISTINCT去重相同的字段
+
+====================================================链表查询
+FORM后面的主表即为左表。JOIN后面的副表即为右表
+inner join 返回只符合on条件的数据
+left join  返回左表所有数据和符合on条件的数据。on条件过滤后的，符合条件的赋值，不符合条件的，字段null
+right join 反之
+规则：1、选择需要查出的字段，2、主表链接附表，3、找出关联的字段 4、可选筛选条件
+SELECT sex,s.name,s.classid,c.`name` AS 班级名称
+FROM student AS s
+LEFT JOIN class AS c
+ON s.classid = c.classid
+WHERE sex = 'nan'
+
+================================================排序
+DESC 为倒叙
+ORDER BY 排序属性1,属性2 DESC
+
+================================================分页
+LIMIT 返回条数 OFFSET 跳过条数
+
+================================================子查询 where(查询语句),本质也是多表查询
+注意返回多行使用in 单行使用=，查询是先查括号里面的，再执行外面的
+先查出school集合，再用where去对比，最后查出的结果集是class
+注意括号里面的select 只选择一个关键字段
+SELECT name,classid,schoolid
+FROM class
+WHERE schoolid IN (SELECT s.schoolid FROM school AS s WHERE s.schoolid = 1)
+
+
+=================================================聚合查询
+SELECT COUNT(*) num FROM students;
+SELECT name,COUNT(name) AS namenum,sex,COUNT(sex) as sexnum FROM student
+WHERE classid=0
+GROUP BY name,sex  //根据name分组
