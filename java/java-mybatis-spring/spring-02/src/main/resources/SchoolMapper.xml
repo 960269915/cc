@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--如果没有sql 提示 把https 改为http就可以了-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 绑定一个对应的dao接口-->
+<mapper namespace="com.mapper.SchoolMapper">
+   <select id="getSchool" resultType="com.entity.School">
+      select * from school
+   </select>
+
+   <insert id="addSchool" parameterType="com.entity.School">
+      insert into school (school_name) values (#{schoolName})
+   </insert>
+
+   <delete id="delSchool" parameterType="int">
+      delete from school where ids = #{id}
+   </delete>
+
+</mapper>
+
+
+
+
+

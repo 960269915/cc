@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--        开启数据库字段转为驼峰-->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+    <mappers>
+<!--    ===================== 此处注册所有的mapper-->
+        <mapper resource="SchoolMapper.xml"/>
+    </mappers>
+
+</configuration>

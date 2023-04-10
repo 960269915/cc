@@ -2,23 +2,76 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+     https://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/aop
+     https://www.springframework.org/schema/aop/spring-aop.xsd
+     http://www.springframework.org/schema/cache
+     http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
 <!--    spring使用的是IOC，即依赖注入，比如创建对象时，不显示声明对象，而是传入对象-->
 <!--    使用spring来创建对象，在spring中,叫bean-->
 <!--    注册以后，使用类不需要再引入 bean= new Object()-->
 <!--    注册bean 默认使用无参构造,constructor-arg使用有参构造-->
 <!--    autowire="byName" 自动注入-->
-    <bean id="user" class="com.entity.User">
-<!--        value给对象赋值，不是必须  ref引用另一个bean-->
-        <property name="name" value="cc"/>
-    </bean>
-    <bean id="student" class="com.entity.Student" autowire="byName">
-<!--        <constructor-arg  ref="user"/>-->
-<!--        <constructor-arg  value="111"/>-->
-    </bean>
+<!--    <bean id="user" class="com.entity.User">-->
+<!--&lt;!&ndash;        value给对象赋值，不是必须  ref引用另一个bean&ndash;&gt;-->
+<!--        <property name="name" value="cc"/>-->
+<!--    </bean>-->
+<!--    <bean id="student" class="com.entity.Student" autowire="byName">-->
+<!--&lt;!&ndash;        <constructor-arg  ref="user"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg  value="111"/>&ndash;&gt;-->
+<!--    </bean>-->
 
-<!--    开启注解支持，建议使用-->
+<!--====================================== 重点 重点 重点   开启注解支持，建议使用注解开发(最好结合方式，注册bean使用xml，属性注入使用注解)-->
     <context:annotation-config/>
+<!--    扫描类。类上面有@Component，就是注册bean-->
+    <context:component-scan base-package="com.entity"/>
+    <context:component-scan base-package="com.mapper"/>
+
+    <!--===========================================    还可以使用javaConfig实现注册,完全抛弃xml文件-->
+
+<!-- =====================================   aop配置-->
+<!--    <aop:aspectj-autoproxy/>-->
+<!--    <context:component-scan base-package="aop.log"/>-->
+
+<!--    配置mybatis-->
+<!--    第一步，配置数据库-->
+    <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://localhost:3306/cc"/>
+        <property name="username" value="root"/>
+        <property name="password" value="caiyuntao@1992"/>
+     </bean>
+<!--    第二步配置sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="datasource"/>
+<!--        配置mybatis,可以引入外部配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+    </bean>
+<!--    第三步，配置sqlSession-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+<!--    第四步，配置事务-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <constructor-arg name="dataSource" ref="datasource"/>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+<!--            method 为哪些方法开启事务，*为全部方法-->
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+<!--    aop切入-->
+    <aop:config>
+<!--        找到com.mapper下的所有类的所有方法-->
+        <aop:pointcut id="txPointCut" expression="execution(* com.mapper..*(..))"/>
+<!--        为com.mapper下的所有类的所有方法，配置txAdvice事务-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
+
 
 </beans>
